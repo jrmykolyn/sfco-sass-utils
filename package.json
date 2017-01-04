@@ -1,0 +1,19 @@
+{
+  "name": "sfco-sass-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrmykolyn/sfco-sass-utils.git"
+  },
+  "author": "Jesse R Mykolyn <jrmykolyn@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrmykolyn/sfco-sass-utils/issues"
+  },
+  "homepage": "https://github.com/jrmykolyn/sfco-sass-utils#readme"
+}
