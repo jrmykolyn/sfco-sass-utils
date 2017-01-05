@@ -1,0 +1,23 @@
+/**
+ * For each valid 'state' (eg. pseduo-selector) received via the `$states` argument,
+ * mixin wraps the provided `@content` declarations in a new CSS rule.
+ *
+ * Note that the mixin validates each 'state' against an internally defined whitelist.
+ *
+ * @param {String} `$states` - The list of 'states' for which to apply the provided styles
+ *
+ * Usage:
+ * @include on( hover ) { background: red; }
+ * @include on( focus active ) { margin-right: 10px; }
+ */
+@mixin on( $states ) {
+    $validStates: hover focus active visited;
+
+    @each $state in $states {
+        @if index( $validStates, $state ) {
+            &:#{$state} {
+                @content;
+            }
+        }
+    }
+}
