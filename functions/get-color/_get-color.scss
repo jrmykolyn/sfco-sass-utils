@@ -1,14 +1,21 @@
-/**
- * Function fetches the specified color from a 'set' of colors, defined on $colorMap.
- *
- * @param {String} `$colorName` - The color to fetch.
- * @param {String} `$colorSet` - The set/group of colors which contains `$colorName`.
- * @return {String}
- *
- * Usage:
- * color: getColor( black );
- * background-color: getColor( base, placeholder );
- */
+/*
+@styleguide
+
+@title getColor (@function)
+
+Function fetches the specified color from a 'set' of colors, defined on $colorMap.
+
+- @param {String} `$colorName` - *The color to fetch.*
+- @param {String} `$colorSet` - *The set/group of colors which contains `$colorName`.*
+- @return {String}
+
+### Usage
+```
+color: getColor( black );
+
+background-color: getColor( base, placeholder );
+```
+*/
 @function getColor( $colorName, $colorSet: base ) {
   @if global-variable-exists( colorMap ) == false {
     @error 'Whoops! Please ensure that the `$colorMap` variable exists.';

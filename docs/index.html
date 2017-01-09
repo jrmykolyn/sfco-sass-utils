@@ -10,14 +10,14 @@
     <nav class="psg-menu">
       <h1 class="psg-projectName">SF Co. SASS Utils</h1>
       
-      <p class="psg-updatedTime">Last updated on: <time>Jan 09, 2017 at 00:38</time></p>
+      <p class="psg-updatedTime">Last updated on: <time>Jan 09, 2017 at 00:42</time></p>
       <ul class="psg-componentList">
         
         
           
             <a href="#psg-link-0" class="psg-componentList-item">
               <li>
-                on (@mixin)
+                getColor (@function)
               </li>
             </a>
           
@@ -25,7 +25,7 @@
           
             <a href="#psg-link-1" class="psg-componentList-item">
               <li>
-                set (@mixin)
+                on (@mixin)
               </li>
             </a>
           
@@ -33,13 +33,21 @@
           
             <a href="#psg-link-2" class="psg-componentList-item">
               <li>
-                pseudo (@mixin)
+                set (@mixin)
               </li>
             </a>
           
         
           
             <a href="#psg-link-3" class="psg-componentList-item">
+              <li>
+                pseudo (@mixin)
+              </li>
+            </a>
+          
+        
+          
+            <a href="#psg-link-4" class="psg-componentList-item">
               <li>
                 descendant (@mixin)
               </li>
@@ -54,7 +62,30 @@
         
         
           <section class="psg-component">
-            <h2 id="psg-link-0" class="psg-componentTitle">on (@mixin)</h2>
+            <h2 id="psg-link-0" class="psg-componentTitle">getColor (@function)</h2>
+            <div class="psg-contents">
+              <div class="psg-contents-html">
+                <p>Function fetches the specified color from a &#39;set&#39; of colors, defined on $colorMap.</p>
+<ul>
+<li>@param {String} <code>$colorName</code> - <em>The color to fetch.</em></li>
+<li>@param {String} <code>$colorSet</code> - <em>The set/group of colors which contains <code>$colorName</code>.</em></li>
+<li>@return {String}</li>
+</ul>
+<h3 id="usage">Usage</h3>
+<pre><code><span class="hljs-attribute">color</span>: <span class="hljs-string">getColor( black );</span>
+
+<span class="scss"><span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-function">getColor</span>( base, placeholder );</span></span>
+</code></pre>
+              </div>
+              <div class="psg-contents-rule">
+                <pre><code class="lang-css"></code></pre>
+              </div>
+            </div>
+          </section>
+          <hr class="psg-separator">
+        
+          <section class="psg-component">
+            <h2 id="psg-link-1" class="psg-componentTitle">on (@mixin)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>For each valid &#39;state&#39; (eg. pseduo-selector) received via the <code>$states</code> argument,
@@ -77,7 +108,7 @@ Note that the mixin validates each &#39;state&#39; against an internally defined
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-1" class="psg-componentTitle">set (@mixin)</h2>
+            <h2 id="psg-link-2" class="psg-componentTitle">set (@mixin)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>Mixin creates 1x declaration for each item in a list of properties (<code>$props</code>).
@@ -102,7 +133,7 @@ The value of each declaration is set to <code>$value</code>.</p>
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-2" class="psg-componentTitle">pseudo (@mixin)</h2>
+            <h2 id="psg-link-3" class="psg-componentTitle">pseudo (@mixin)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>For each valid pseudo element received via the <code>$elements</code> argument,
@@ -128,7 +159,7 @@ Note that the mixin validates each &#39;element&#39; against an internally defin
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-3" class="psg-componentTitle">descendant (@mixin)</h2>
+            <h2 id="psg-link-4" class="psg-componentTitle">descendant (@mixin)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>For each valid &#39;descendant keyword&#39; received via the <code>$descendants</code> argument,
