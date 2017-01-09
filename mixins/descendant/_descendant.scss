@@ -11,7 +11,17 @@ Note that the mixin validates each 'descendant keyword' against an internally de
 
 ### Usage
 ```
-@include descendant( first ) {
+// Input
+section {
+    @include descendant( first last ) {
+        color: blue;
+        margin-bottom: 30px;
+    }
+}
+
+// Output
+section > *:first-child,
+section > *:last-child, {
     color: blue;
     margin-bottom: 30px;
 }

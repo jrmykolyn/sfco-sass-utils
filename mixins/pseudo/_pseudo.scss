@@ -11,7 +11,18 @@ Note that the mixin validates each 'element' against an internally defined white
 
 ### Usage
 ```
-@include pseudo( before ) {
+// Input
+div {
+    @include pseudo( before ) {
+        content: 'This is my before element content';
+        display: block;
+        color: white;
+        background-color: black;
+    }
+}
+
+// Output
+div::before {
     content: 'This is my before element content';
     display: block;
     color: white;

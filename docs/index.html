@@ -10,7 +10,7 @@
     <nav class="psg-menu">
       <h1 class="psg-projectName">SF Co. SASS Utils</h1>
       
-      <p class="psg-updatedTime">Last updated on: <time>Jan 09, 2017 at 00:42</time></p>
+      <p class="psg-updatedTime">Last updated on: <time>Jan 09, 2017 at 01:02</time></p>
       <ul class="psg-componentList">
         
         
@@ -72,9 +72,32 @@
 <li>@return {String}</li>
 </ul>
 <h3 id="usage">Usage</h3>
-<pre><code><span class="hljs-attribute">color</span>: <span class="hljs-string">getColor( black );</span>
+<pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">p</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-function">getColor</span>( black );
+}
 
-<span class="scss"><span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-function">getColor</span>( base, placeholder );</span></span>
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">p</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#000</span>;
+}
+
+
+<span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span></span>
+<span class="hljs-comment">// Example above assumes that $colorMap includes the key 'black', set to a value of #000.</span>
+</code></pre><pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">h1</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-function">getColor</span>( base, placeholder );
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">h1</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-hexcolor">#FAFAFA</span>;
+}
+
+<span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span></span>
+<span class="hljs-comment">// Example above assumes that $colorMap includes the $colorSet 'placeholder',</span>
+<span class="hljs-comment">// which in turn has a key called 'base' set to value of #FAFAFA.</span>
 </code></pre>
               </div>
               <div class="psg-contents-rule">
@@ -95,9 +118,25 @@ Note that the mixin validates each &#39;state&#39; against an internally defined
 <li>@param {String} <code>$states</code> - The list of &#39;states&#39; for which to apply the provided styles</li>
 </ul>
 <h3 id="usage">Usage</h3>
-<pre><code><span class="hljs-variable">@include</span> <span class="hljs-function">on</span>( hover ) { <span class="hljs-attribute">background</span>: red; }
+<pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">a</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">on</span>( hover ) { <span class="hljs-attribute">background</span>: red; }
+}
 
-<span class="hljs-variable">@include</span> <span class="hljs-function">on</span>( focus active ) { <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>; }
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:hover</span> {
+    <span class="hljs-attribute">background</span>: red;
+}
+</code></pre><pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">a</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">on</span>( focus active ) { <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>; }
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:focus</span>,
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:active</span> {
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>;
+}
 </code></pre>
               </div>
               <div class="psg-contents-rule">
@@ -118,11 +157,26 @@ The value of each declaration is set to <code>$value</code>.</p>
 <li>@param {String|Number} <code>$value</code></li>
 </ul>
 <h3 id="usage">Usage</h3>
-<pre><code>@include <span class="hljs-keyword">set</span>( margin padding, <span class="hljs-number">0</span> );
+<pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">p</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">set</span>( margin padding, <span class="hljs-number">0</span> );
+}
 
-@include <span class="hljs-keyword">set</span>( margin-top margin-bottom padding-right padding-left, <span class="hljs-number">2</span><span class="hljs-comment">rem );</span>
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">p</span> {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+}
+</code></pre><pre><code><span class="hljs-comment">// Input</span>
+img {
+    @include <span class="hljs-built_in">set</span>( <span class="hljs-built_in">min</span>-<span class="hljs-variable">height</span> <span class="hljs-built_in">max</span>-<span class="hljs-variable">height</span>, <span class="hljs-number">100</span>% );
+}
 
-@include <span class="hljs-keyword">set</span>( min-height max-height, <span class="hljs-number">100</span>% );
+<span class="hljs-comment">// Output</span>
+img {
+    <span class="hljs-built_in">min</span>-<span class="hljs-variable">height</span>: <span class="hljs-number">100</span>%;
+    <span class="hljs-built_in">max</span>-<span class="hljs-variable">height</span>: <span class="hljs-number">100</span>%;
+}
 </code></pre>
               </div>
               <div class="psg-contents-rule">
@@ -143,7 +197,18 @@ Note that the mixin validates each &#39;element&#39; against an internally defin
 <li>@param {String} <code>$elements</code></li>
 </ul>
 <h3 id="usage">Usage</h3>
-<pre><code><span class="hljs-variable">@include</span> <span class="hljs-function">pseudo</span>( before ) {
+<pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">div</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">pseudo</span>( before ) {
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">'This is my before element content'</span>;
+        <span class="hljs-attribute">display</span>: block;
+        <span class="hljs-attribute">color</span>: white;
+        <span class="hljs-attribute">background-color</span>: black;
+    }
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">div</span><span class="hljs-pseudo">::before</span> {
     <span class="hljs-attribute">content</span>: <span class="hljs-string">'This is my before element content'</span>;
     <span class="hljs-attribute">display</span>: block;
     <span class="hljs-attribute">color</span>: white;
@@ -169,7 +234,17 @@ Note that the mixin validates each &#39;descendant keyword&#39; against an inter
 <li>@param {String} <code>$descendants</code></li>
 </ul>
 <h3 id="usage">Usage</h3>
-<pre><code><span class="hljs-variable">@include</span> <span class="hljs-function">descendant</span>( first ) {
+<pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">section</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">descendant</span>( first last ) {
+        <span class="hljs-attribute">color</span>: blue;
+        <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">30px</span>;
+    }
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">section</span> &gt; *<span class="hljs-pseudo">:first-child</span>,
+<span class="hljs-tag">section</span> &gt; *<span class="hljs-pseudo">:last-child</span>, {
     <span class="hljs-attribute">color</span>: blue;
     <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">30px</span>;
 }

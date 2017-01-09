@@ -11,9 +11,34 @@ Function fetches the specified color from a 'set' of colors, defined on $colorMa
 
 ### Usage
 ```
-color: getColor( black );
+// Input
+p {
+    color: getColor( black );
+}
 
-background-color: getColor( base, placeholder );
+// Output
+p {
+    color: #000;
+}
+
+
+// NOTE:
+// Example above assumes that $colorMap includes the key 'black', set to a value of #000.
+```
+```
+// Input
+h1 {
+    background-color: getColor( base, placeholder );
+}
+
+// Output
+h1 {
+    background-color: #FAFAFA;
+}
+
+// NOTE:
+// Example above assumes that $colorMap includes the $colorSet 'placeholder',
+// which in turn has a key called 'base' set to value of #FAFAFA.
 ```
 */
 @function getColor( $colorName, $colorSet: base ) {
