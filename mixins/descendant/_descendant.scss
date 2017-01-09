@@ -1,0 +1,25 @@
+/**
+ * For each valid 'descendant keyword' received via the `$descendants` argument,
+ * mixin wraps the provided `@content` declarations in a new CSS rule.
+ *
+ * Note that the mixin validates each 'descendant keyword' against an internally defined whitelist.
+ *
+ * @param {String} `$descendants`
+ *
+ * Usage:
+ * @include descendant( first ) {
+ *    color: blue;
+ *    margin-bottom: 30px;
+ * }
+ */
+@mixin descendant( $descendants ) {
+    $validDescendants: first last;
+
+    @each $descendant in $descendants {
+        @if index( $validDescendants, $descendant ) {
+            & > *:#{$descendant}-child {
+                @content;
+            }
+        }
+    }
+}
