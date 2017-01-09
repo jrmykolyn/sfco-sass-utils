@@ -12,6 +12,6 @@
  */
 @mixin set( $props, $value ) {
     @each $prop in $props {
-        #{$prop}: #{value};
+        #{$prop}: #{$value};
     }
 }
