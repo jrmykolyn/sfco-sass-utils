@@ -1,0 +1,273 @@
+<!doctype html>
+<html class="psg-theme" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SF Co. SASS Utils</title>
+  <style>.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8;-webkit-text-size-adjust:none}.diff .hljs-header,.hljs-comment{color:#998;font-style:italic}.css .rule .hljs-keyword,.hljs-keyword,.hljs-request,.hljs-status,.hljs-subst,.hljs-winutils,.nginx .hljs-title{color:#333;font-weight:700}.hljs-hexcolor,.hljs-number,.ruby .hljs-constant{color:teal}.hljs-doctag,.hljs-string,.hljs-tag .hljs-value,.tex .hljs-formula{color:#d14}.hljs-id,.hljs-title,.scss .hljs-preprocessor{color:#900;font-weight:700}.hljs-list .hljs-keyword,.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type,.tex .hljs-command,.vhdl .hljs-literal{color:#458;font-weight:700}.django .hljs-tag .hljs-keyword,.hljs-rule .hljs-property,.hljs-tag,.hljs-tag .hljs-title{color:navy;font-weight:400}.hljs-attribute,.hljs-name,.hljs-variable,.lisp .hljs-body{color:teal}.hljs-regexp{color:#009926}.clojure .hljs-keyword,.hljs-prompt,.hljs-symbol,.lisp .hljs-keyword,.ruby .hljs-symbol .hljs-string,.scheme .hljs-keyword,.tex .hljs-special{color:#990073}.hljs-built_in{color:#0086b3}.hljs-cdata,.hljs-doctype,.hljs-pi,.hljs-pragma,.hljs-preprocessor,.hljs-shebang{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}body{margin:0}body,html{height:100%;overflow-y:hidden}.psg-colorPalette,.psg-componentTitle,.psg-footer,.psg-menu,h1[id],h2[id],h3[id],h4[id],h5[id],h6[id],p[id]{font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif}.psg-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;height:100%}.psg-menu{width:240px;height:100%;padding:3rem 2rem;border-right:1px solid #ddd;overflow-y:scroll}.psg-componentTitle,.psg-projectName{font-size:2rem}.psg-projectName{margin-top:0;margin-bottom:.5rem}.psg-updatedTime{font-size:.75rem;margin-top:0;margin-bottom:1.75rem}.psg-componentList{padding-left:1rem}.psg-componentList-item{display:block;padding:.5rem 0}.psg-main{-webkit-box-flex:1;-ms-flex:1 1 0%;flex:1 1 0%;height:100%;overflow-y:scroll}.psg-container,.psg-footer{margin:3rem 0;max-width:1280px;margin:0 auto}.psg-component,.psg-footer{padding-left:2rem;padding-right:2rem}.psg-componentTitle{margin:3rem 0}.psg-contents-html>pre,.psg-contents-rule>pre{margin:2rem 0;overflow:auto;background-color:#f6f6f6;padding:1rem;position:relative}hr.psg-separator{margin:4rem 0;border:0;border-top:1px solid #ddd}.psg-colorPalette{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-flow:row wrap;flex-flow:row wrap;margin-left:-.75rem;margin-right:-.75rem}.psg-colorBox{width:278px;box-shadow:1px 1px 10px 0 rgba(0,0,0,.2);margin:1rem}.psg-colorBox-sample{height:160px}.psg-colorBox-color,.psg-colorBox-name{font-size:.875rem;padding-left:.75rem;padding-right:.75rem}.psg-colorBox-color{padding-top:1rem}.psg-colorBox-name{padding-bottom:1rem}.psg-footer{font-size:.875rem;padding-bottom:2.5rem}</style>
+</head>
+<body>
+  <div class="psg-wrapper">
+    <nav class="psg-menu">
+      <h1 class="psg-projectName">SF Co. SASS Utils</h1>
+      
+      <p class="psg-updatedTime">Last updated on: <time>Jan 09, 2017 at 01:02</time></p>
+      <ul class="psg-componentList">
+        
+        
+          
+            <a href="#psg-link-0" class="psg-componentList-item">
+              <li>
+                getColor (@function)
+              </li>
+            </a>
+          
+        
+          
+            <a href="#psg-link-1" class="psg-componentList-item">
+              <li>
+                on (@mixin)
+              </li>
+            </a>
+          
+        
+          
+            <a href="#psg-link-2" class="psg-componentList-item">
+              <li>
+                set (@mixin)
+              </li>
+            </a>
+          
+        
+          
+            <a href="#psg-link-3" class="psg-componentList-item">
+              <li>
+                pseudo (@mixin)
+              </li>
+            </a>
+          
+        
+          
+            <a href="#psg-link-4" class="psg-componentList-item">
+              <li>
+                descendant (@mixin)
+              </li>
+            </a>
+          
+        
+      </ul>
+    </nav>
+
+    <div class="psg-main">
+      <div class="psg-container">
+        
+        
+          <section class="psg-component">
+            <h2 id="psg-link-0" class="psg-componentTitle">getColor (@function)</h2>
+            <div class="psg-contents">
+              <div class="psg-contents-html">
+                <p>Function fetches the specified color from a &#39;set&#39; of colors, defined on $colorMap.</p>
+<ul>
+<li>@param {String} <code>$colorName</code> - <em>The color to fetch.</em></li>
+<li>@param {String} <code>$colorSet</code> - <em>The set/group of colors which contains <code>$colorName</code>.</em></li>
+<li>@return {String}</li>
+</ul>
+<h3 id="usage">Usage</h3>
+<pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">p</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-function">getColor</span>( black );
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">p</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#000</span>;
+}
+
+
+<span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span></span>
+<span class="hljs-comment">// Example above assumes that $colorMap includes the key 'black', set to a value of #000.</span>
+</code></pre><pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">h1</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-function">getColor</span>( base, placeholder );
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">h1</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-hexcolor">#FAFAFA</span>;
+}
+
+<span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span></span>
+<span class="hljs-comment">// Example above assumes that $colorMap includes the $colorSet 'placeholder',</span>
+<span class="hljs-comment">// which in turn has a key called 'base' set to value of #FAFAFA.</span>
+</code></pre>
+              </div>
+              <div class="psg-contents-rule">
+                <pre><code class="lang-css"></code></pre>
+              </div>
+            </div>
+          </section>
+          <hr class="psg-separator">
+        
+          <section class="psg-component">
+            <h2 id="psg-link-1" class="psg-componentTitle">on (@mixin)</h2>
+            <div class="psg-contents">
+              <div class="psg-contents-html">
+                <p>For each valid &#39;state&#39; (eg. pseduo-selector) received via the <code>$states</code> argument,
+mixin wraps the provided <code>@content</code> declarations in a new CSS rule.
+Note that the mixin validates each &#39;state&#39; against an internally defined whitelist.</p>
+<ul>
+<li>@param {String} <code>$states</code> - The list of &#39;states&#39; for which to apply the provided styles</li>
+</ul>
+<h3 id="usage">Usage</h3>
+<pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">a</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">on</span>( hover ) { <span class="hljs-attribute">background</span>: red; }
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:hover</span> {
+    <span class="hljs-attribute">background</span>: red;
+}
+</code></pre><pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">a</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">on</span>( focus active ) { <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>; }
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:focus</span>,
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:active</span> {
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>;
+}
+</code></pre>
+              </div>
+              <div class="psg-contents-rule">
+                <pre><code class="lang-css"></code></pre>
+              </div>
+            </div>
+          </section>
+          <hr class="psg-separator">
+        
+          <section class="psg-component">
+            <h2 id="psg-link-2" class="psg-componentTitle">set (@mixin)</h2>
+            <div class="psg-contents">
+              <div class="psg-contents-html">
+                <p>Mixin creates 1x declaration for each item in a list of properties (<code>$props</code>).
+The value of each declaration is set to <code>$value</code>.</p>
+<ul>
+<li>@param {String} <code>$props</code></li>
+<li>@param {String|Number} <code>$value</code></li>
+</ul>
+<h3 id="usage">Usage</h3>
+<pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">p</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">set</span>( margin padding, <span class="hljs-number">0</span> );
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">p</span> {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+}
+</code></pre><pre><code><span class="hljs-comment">// Input</span>
+img {
+    @include <span class="hljs-built_in">set</span>( <span class="hljs-built_in">min</span>-<span class="hljs-variable">height</span> <span class="hljs-built_in">max</span>-<span class="hljs-variable">height</span>, <span class="hljs-number">100</span>% );
+}
+
+<span class="hljs-comment">// Output</span>
+img {
+    <span class="hljs-built_in">min</span>-<span class="hljs-variable">height</span>: <span class="hljs-number">100</span>%;
+    <span class="hljs-built_in">max</span>-<span class="hljs-variable">height</span>: <span class="hljs-number">100</span>%;
+}
+</code></pre>
+              </div>
+              <div class="psg-contents-rule">
+                <pre><code class="lang-css"></code></pre>
+              </div>
+            </div>
+          </section>
+          <hr class="psg-separator">
+        
+          <section class="psg-component">
+            <h2 id="psg-link-3" class="psg-componentTitle">pseudo (@mixin)</h2>
+            <div class="psg-contents">
+              <div class="psg-contents-html">
+                <p>For each valid pseudo element received via the <code>$elements</code> argument,
+mixin wraps the provided <code>@content</code> declarations in a new CSS rule.
+Note that the mixin validates each &#39;element&#39; against an internally defined whitelist.</p>
+<ul>
+<li>@param {String} <code>$elements</code></li>
+</ul>
+<h3 id="usage">Usage</h3>
+<pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">div</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">pseudo</span>( before ) {
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">'This is my before element content'</span>;
+        <span class="hljs-attribute">display</span>: block;
+        <span class="hljs-attribute">color</span>: white;
+        <span class="hljs-attribute">background-color</span>: black;
+    }
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">div</span><span class="hljs-pseudo">::before</span> {
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">'This is my before element content'</span>;
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">color</span>: white;
+    <span class="hljs-attribute">background-color</span>: black;
+}
+</code></pre>
+              </div>
+              <div class="psg-contents-rule">
+                <pre><code class="lang-css"></code></pre>
+              </div>
+            </div>
+          </section>
+          <hr class="psg-separator">
+        
+          <section class="psg-component">
+            <h2 id="psg-link-4" class="psg-componentTitle">descendant (@mixin)</h2>
+            <div class="psg-contents">
+              <div class="psg-contents-html">
+                <p>For each valid &#39;descendant keyword&#39; received via the <code>$descendants</code> argument,
+mixin wraps the provided <code>@content</code> declarations in a new CSS rule.
+Note that the mixin validates each &#39;descendant keyword&#39; against an internally defined whitelist.</p>
+<ul>
+<li>@param {String} <code>$descendants</code></li>
+</ul>
+<h3 id="usage">Usage</h3>
+<pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">section</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">descendant</span>( first last ) {
+        <span class="hljs-attribute">color</span>: blue;
+        <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">30px</span>;
+    }
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">section</span> &gt; *<span class="hljs-pseudo">:first-child</span>,
+<span class="hljs-tag">section</span> &gt; *<span class="hljs-pseudo">:last-child</span>, {
+    <span class="hljs-attribute">color</span>: blue;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">30px</span>;
+}
+</code></pre>
+              </div>
+              <div class="psg-contents-rule">
+                <pre><code class="lang-css"></code></pre>
+              </div>
+            </div>
+          </section>
+          <hr class="psg-separator">
+        
+
+        <div class="psg-footer">
+          <p>Generated by <a href="https://github.com/morishitter/postcss-style-guide" target="_blank">postcss-style-guide</a>  |
+          Theme: <strong>Minimal</strong></p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
