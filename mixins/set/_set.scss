@@ -1,15 +1,23 @@
-/**
- * Mixin creates 1x declaration for each item in a list of properties (`$props`).
- * The value of each declaration is set to `$value`.
- *
- * @param {String} `$props`
- * @param {String|Number} `$value`
- *
- * Useage:
- * @include set( margin padding, 0 );
- * @include set( margin-top margin-bottom padding-right padding-left, 2rem );
- * @include set( min-height max-height, 100% );
- */
+/*
+@styleguide
+
+@title set (@mixin)
+
+Mixin creates 1x declaration for each item in a list of properties (`$props`).
+The value of each declaration is set to `$value`.
+
+- @param {String} `$props`
+- @param {String|Number} `$value`
+
+### Usage
+```
+@include set( margin padding, 0 );
+
+@include set( margin-top margin-bottom padding-right padding-left, 2rem );
+
+@include set( min-height max-height, 100% );
+```
+*/
 @mixin set( $props, $value ) {
     @each $prop in $props {
         #{$prop}: #{$value};

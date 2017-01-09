@@ -1,19 +1,24 @@
-/**
- * For each valid pseudo element received via the `$elements` argument,
- * mixin wraps the provided `@content` declarations in a new CSS rule.
- *
- * Note that the mixin validates each 'element' against an internally defined whitelist.
- *
- * @param {String} `$elements`
- *
- * Usage:
- * @include pseudo( before ) {
- *    content: 'This is my before element content';
- *    display: block;
- *    color: white;
- *    background-color: black;
- * }
- */
+/*
+@styleguide
+
+@title pseudo (@mixin)
+
+For each valid pseudo element received via the `$elements` argument,
+mixin wraps the provided `@content` declarations in a new CSS rule.
+Note that the mixin validates each 'element' against an internally defined whitelist.
+
+- @param {String} `$elements`
+
+### Usage
+```
+@include pseudo( before ) {
+    content: 'This is my before element content';
+    display: block;
+    color: white;
+    background-color: black;
+}
+```
+*/
 @mixin pseudo( $elements ) {
     $validPseudoElements: before after;
 
