@@ -24,6 +24,7 @@
 
 /*!
  * If test is successful, rule(s) below should include styles for:
+ * - ...
  * - `margin` and `padding`;
  * - `:hover`;
  * - `:before`;
@@ -44,4 +45,24 @@
     @include descendant( first ) {
         color: blue;
     }
+}
+
+
+/*!
+ * If test is successful, rule(s) below should include styles for:
+ * - max-width;
+ * - max-height;
+ */
+.test--mixins--max-size--1x-args {
+    @include max-size( 50% );
+}
+
+
+/*!
+ * If test is successful, rule(s) below should include styles for:
+ * - max-width;
+ * - max-height;
+ */
+.test--mixins--max-size--2x-args {
+    @include max-size( 100% 400px );
 }
