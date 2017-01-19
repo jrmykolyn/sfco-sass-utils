@@ -1,0 +1,28 @@
+/*!
+ * If test is successful, rule(s) below should include styles for:
+ * - color: #FF0000;
+ */
+.test--functions {
+  color: #FF0000;
+}
+/*!
+ * If test is successful, rule(s) below should include styles for:
+ * - `margin` and `padding`;
+ * - `:hover`;
+ * - `:before`;
+ * - `> :first-child`;
+ */
+.test--mixins {
+  margin: 0;
+  padding: 0;
+}
+.test--mixins:hover {
+  color: red;
+}
+.test--mixins::before {
+  content: '';
+  display: block;
+}
+.test--mixins > *:first-child {
+  color: blue;
+}

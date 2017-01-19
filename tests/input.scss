@@ -1,0 +1,47 @@
+// --------------------------------------------------
+// IMPORT CONFIG
+// --------------------------------------------------
+@import 'config/manifest';
+
+
+// --------------------------------------------------
+// IMPORT PACKAGE
+// --------------------------------------------------
+@import '../sfco-sass-utils';
+
+
+// --------------------------------------------------
+// DO TESTS
+// --------------------------------------------------
+/*!
+ * If test is successful, rule(s) below should include styles for:
+ * - color: #FF0000;
+ */
+.test--functions {
+    color: getColor( red );
+}
+
+
+/*!
+ * If test is successful, rule(s) below should include styles for:
+ * - `margin` and `padding`;
+ * - `:hover`;
+ * - `:before`;
+ * - `> :first-child`;
+ */
+.test--mixins {
+    @include set( margin padding, 0 );
+
+    @include on( hover ) {
+        color: red;
+    }
+
+    @include pseudo( before ) {
+        content: '';
+        display: block;
+    }
+
+    @include descendant( first ) {
+        color: blue;
+    }
+}
