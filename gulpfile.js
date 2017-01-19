@@ -36,6 +36,7 @@ var PATHS = {
  *
  * The following tasks are executed *before* the contents of
  * the `default` task.
+ * - `tests`
  * - `docs`
  */
 gulp.task( 'default', [ 'tests', 'docs' ], function() {
