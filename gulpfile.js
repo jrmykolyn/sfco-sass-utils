@@ -4,6 +4,7 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var stripCSSComments = require('gulp-strip-css-comments');
+var removeEmptyLines = require('gulp-remove-empty-lines');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var postCSSCustomProperties = require('postcss-custom-properties');
@@ -75,9 +76,10 @@ gulp.task( 'tests', function() {
         .pipe( sass( {
             outputStyle: 'expanded'
         } ) )
+        .pipe( stripCSSComments() )
+        .pipe( removeEmptyLines() )
         .pipe( rename( function( path ) {
             path.basename = 'output';
         } ) )
-        .pipe( stripCSSComments() )
         .pipe( gulp.dest( PATHS.tests.dest) );
 } );
