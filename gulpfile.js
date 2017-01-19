@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
+var stripCSSComments = require('gulp-strip-css-comments');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var postCSSCustomProperties = require('postcss-custom-properties');
@@ -71,9 +72,12 @@ gulp.task( 'docs', function() {
  */
 gulp.task( 'tests', function() {
     return gulp.src( PATHS.tests.src + 'input.scss' )
-        .pipe( sass() )
-        .pipe( rename( function( path) {
+        .pipe( sass( {
+            outputStyle: 'expanded'
+        } ) )
+        .pipe( rename( function( path ) {
             path.basename = 'output';
         } ) )
+        .pipe( stripCSSComments() )
         .pipe( gulp.dest( PATHS.tests.dest) );
 } );
