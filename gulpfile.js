@@ -2,6 +2,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
+var rename = require('gulp-rename');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var postCSSCustomProperties = require('postcss-custom-properties');
@@ -18,6 +19,10 @@ var PATHS = {
     docs: {
         src: './',
         dest: './docs/'
+    },
+    tests: {
+        src: './tests/',
+        dest: './tests/'
     }
 };
 
@@ -31,7 +36,7 @@ var PATHS = {
  * the `default` task.
  * - `docs`
  */
-gulp.task( 'default', [ 'docs' ], function() {
+gulp.task( 'default', [ 'tests', 'docs' ], function() {
     console.log( 'INSIDE TASK: `default`' );
 } );
 
@@ -39,7 +44,7 @@ gulp.task( 'default', [ 'docs' ], function() {
 /**
  * ...
  */
-gulp.task( 'docs', function( ) {
+gulp.task( 'docs', function() {
     return gulp.src( PATHS.docs.src + INPUT )
         .pipe( sass( {
             outputStyle: 'expanded' 
@@ -58,4 +63,17 @@ gulp.task( 'docs', function( ) {
             } ),
             nano
         ] ) );
+} );
+
+
+/**
+ * ...
+ */
+gulp.task( 'tests', function() {
+    return gulp.src( PATHS.tests.src + 'input.scss' )
+        .pipe( sass() )
+        .pipe( rename( function( path) {
+            path.basename = 'output';
+        } ) )
+        .pipe( gulp.dest( PATHS.tests.dest) );
 } );
