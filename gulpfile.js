@@ -74,9 +74,12 @@ gulp.task( 'docs', function() {
  */
 gulp.task( 'tests', function() {
     return gulp.src( PATHS.tests.src + 'input.scss' )
-        .pipe( sass( {
-            outputStyle: 'expanded'
-        } ) )
+        .pipe(
+            sass( {
+                outputStyle: 'expanded'
+            } )
+            .on( 'error', sass.logError )
+        )
         .pipe( stripCSSComments() )
         .pipe( removeEmptyLines() )
         .pipe( rename( function( path ) {
