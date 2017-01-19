@@ -1,0 +1,11 @@
+@mixin max-size( $maxDims: null ) {
+    @if ( $maxDims == null ) {
+        @error 'Whoops! `max-size` requires at least 1x *non-null* argument.';
+    } @else if ( length( $maxDims ) == 1 ) {
+        max-width: #{$maxDims};
+        max-height: #{$maxDims};
+    } @else {
+        max-width: nth( $maxDims, 1 );
+        max-height: nth( $maxDims, 2 );
+    }
+}
