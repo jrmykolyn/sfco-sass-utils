@@ -48,7 +48,7 @@
 /*!
  * If test is successful, rule(s) below should include styles for:
  * - min-width;
- * - max-width;
+ * - min-width;
  */
 .test--mixins--min-size--1x-args {
   min-width: 200px;
@@ -57,7 +57,7 @@
 /*!
  * If test is successful, rule(s) below should include styles for:
  * - min-width;
- * - max-width;
+ * - min-width;
  */
 .text--mixins--min-size--2x-args {
   min-width: 25%;
