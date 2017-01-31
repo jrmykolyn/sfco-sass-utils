@@ -1,0 +1,13 @@
+@function getFont( $fontName, $set: default ) {
+    @if ( global-variable-exists( fontMap ) == false ) {
+        @error 'Whoops! Please ensure that the `$fontMap` variable exists.';
+    }
+
+    @if ( map-has-key( $fontMap, $set ) == false ) {
+        @error 'Please ensure that the `#{$set}` key exists on $fontMap, and is a list.';
+    }
+
+    $fonts: map-get( $fontMap, $set );
+
+    @return map-get( $fonts, $fontName );
+}
