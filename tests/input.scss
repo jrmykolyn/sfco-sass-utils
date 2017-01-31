@@ -16,9 +16,11 @@
 /*!
  * If test is successful, rule(s) below should include styles for:
  * - color: #FF0000;
+ * - font-family: ...;
  */
 .test--functions {
     color: getColor( red );
+    font-family: getFont( display );
 }
 
 
