@@ -1,0 +1,13 @@
+@mixin min-size( $minDims: null ) {
+    @if ( $minDims == null ) {
+        @error 'Whoops! `min-size` requires at least 1x *non-null* argument.';
+    }
+
+    @if ( length( $minDims ) == 1 ) {
+        min-width: $minDims;
+        min-height: $minDims;
+    } @else {
+        min-width: nth( $minDims, 1 );
+        min-height: nth( $minDims, 2 );
+    }
+}
