@@ -1,3 +1,40 @@
+/*
+@styleguide
+
+@title getAspect (@function)
+
+Given a set of 2x numbers (`$dims`), function returns their relationship as either an integer or floating point number.
+
+- @param {String} `$dims` - Space-delimited set of dimensions. Function expects the *first number* to be the *width*, *second* to be the *height*.
+- @param {Boolean} `$returnHeightVal` - If set to `false`, function will return HEIGHT/WIDTH. Argument is set to `true` by default.
+- @return {Number}
+
+### Usage
+```
+// Input
+div {
+    width: 100%;
+    height: getAspect( 16 9, false )*100%;
+}
+
+// Output
+div {
+    width: 100%;
+    height: 56.25%;
+}
+```
+```
+// Input
+span:before {
+    content: "500 is #{getAspect( 500 200 )} times greater than 200."
+}
+
+// Output
+span:before {
+    content: "500 is 2.5 times greater than 200.";
+}
+```
+*/
 @function getAspect( $dims, $returnHeightVal: true ) {
     @if ( length( $dims ) != 2 ) {
         @error 'Please ensure that `$dims` argument contains 2x values.';
