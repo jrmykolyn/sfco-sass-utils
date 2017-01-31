@@ -10,7 +10,7 @@
     <nav class="psg-menu">
       <h1 class="psg-projectName">SF Co. SASS Utils</h1>
       
-      <p class="psg-updatedTime">Last updated on: <time>Jan 19, 2017 at 10:01</time></p>
+      <p class="psg-updatedTime">Last updated on: <time>Jan 31, 2017 at 12:25</time></p>
       <ul class="psg-componentList">
         
         
@@ -58,6 +58,14 @@
             <a href="#psg-link-5" class="psg-componentList-item">
               <li>
                 max-size (@mixin)
+              </li>
+            </a>
+          
+        
+          
+            <a href="#psg-link-6" class="psg-componentList-item">
+              <li>
+                min-size (@mixin)
               </li>
             </a>
           
@@ -295,6 +303,46 @@ Note that the mixin validates each &#39;descendant keyword&#39; against an inter
 <span class="hljs-tag">div</span> {
     <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>;
     <span class="hljs-attribute">max-height</span>: <span class="hljs-number">400px</span>;
+}
+</code></pre>
+              </div>
+              <div class="psg-contents-rule">
+                <pre><code class="lang-css"></code></pre>
+              </div>
+            </div>
+          </section>
+          <hr class="psg-separator">
+        
+          <section class="psg-component">
+            <h2 id="psg-link-6" class="psg-componentTitle">min-size (@mixin)</h2>
+            <div class="psg-contents">
+              <div class="psg-contents-html">
+                <p>Mixin allows for quick setting of the <code>min-width</code> and <code>min-height</code> properties on a given element.</p>
+<p>If the list argument contains 1x item: both properties will be set to the provided value.</p>
+<p>If the list arguments contains 2x or more items: <code>max-width</code> will be set equal to the first value; <code>max-height</code> will be set equal to the second value</p>
+<ul>
+<li>@param {String} <code>$minDims</code> - A list of values</li>
+</ul>
+<h3 id="usage">Usage</h3>
+<pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">div</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">min-size</span>( <span class="hljs-number">200px</span> );
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">div</span> {
+    <span class="hljs-attribute">min-width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">200px</span>;
+}
+</code></pre><pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">div</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">min-size</span>( <span class="hljs-number">25%</span> <span class="hljs-number">600px</span> );
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">div</span> {
+    <span class="hljs-attribute">min-width</span>: <span class="hljs-number">25%</span>;
+    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">600px</span>;
 }
 </code></pre>
               </div>
