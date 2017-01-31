@@ -26,6 +26,26 @@
 
 /*!
  * If test is successful, rule(s) below should include styles for:
+ * - content: ...;
+ */
+.test--functions:before,
+.test--functions::before {
+    content: "1200 is #{getAspect( 1200 800 )} times larger than 800."
+}
+
+
+/*!
+ * If test is successful, rule(s) below should include styles for:
+ * - content: ...;
+ */
+.test--functions:after,
+.test--functions::after {
+    content: "300 is #{getAspect( 400 300, false )*100} percent of 400."
+}
+
+
+/*!
+ * If test is successful, rule(s) below should include styles for:
  * - ...
  * - `margin` and `padding`;
  * - `:hover`;
