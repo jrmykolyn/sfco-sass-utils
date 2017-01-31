@@ -1,0 +1,11 @@
+@function getAspect( $dims, $returnHeightVal: true ) {
+    @if ( length( $dims ) != 2 ) {
+        @error 'Please ensure that `$dims` argument contains 2x values.';
+    }
+
+    @if ( $returnHeightVal == true ) {
+        @return ( nth( $dims, 1 ) / nth( $dims, 2 ) );
+    } @else {
+        @return ( nth( $dims, 2 ) / nth( $dims, 1 ) );
+    }
+}
