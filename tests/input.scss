@@ -17,10 +17,14 @@
  * If test is successful, rule(s) below should include styles for:
  * - color: #FF0000;
  * - font-family: ...;
+ * - display: ...;
+ * - overflow: ...;
  */
 .test--functions {
     color: getColor( red );
     font-family: getFont( primary, display );
+    display: get( $demoMap, display );
+    overflow: get( $demoMap, overflow, hidden );
 }
 
 
