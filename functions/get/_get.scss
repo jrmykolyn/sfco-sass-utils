@@ -1,0 +1,7 @@
+@function get( $map, $key, $fallback: '' ) {
+    @if ( $map and map-has-key( $map, $key ) ) {
+        @return map-get( $map, $key );
+    }
+
+    @return $fallback;
+}
