@@ -1,0 +1,33 @@
+/*
+@styleguide
+
+@title applyAspect (@function)
+
+Given a set of 2x numbers (`$dims`) and a value (`$value`), function applies the aspect ratio to the value and returns the result.
+
+- @param {String} `$dims` - *Space-delimited set of dimensions. Function expects the first number to be the width, second to be the height.*
+- @param {String|Number} `$value` - *Value against which the aspect ratio will be applied. Defaults to '100%' if no argument is provided.*
+- @return {Number}
+
+### Usage
+```
+// Input
+div {
+    width: applyAspect( 3 4 );
+    height: applyAspect( 2 3, 600px );
+}
+
+// Output
+div {
+    width: 75%;
+    height: 400px;
+}
+```
+*/
+@function applyAspect( $dims, $value: 100% ) {
+    @if ( length( $dims ) != 2 ) {
+        @error 'Please ensure that `$dims` argument contains 2x values.';
+    }
+
+    @return getAspect( $dims )*$value;
+}

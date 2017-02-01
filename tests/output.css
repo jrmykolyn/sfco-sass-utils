@@ -9,6 +9,15 @@
 }
 /*!
  * If test is successful, rule(s) below should include styles for:
+ * - width: 75%;
+ * - height: 400px;
+ */
+.test--functions--apply-aspect {
+  width: 75%;
+  height: 400px;
+}
+/*!
+ * If test is successful, rule(s) below should include styles for:
  * - content: ...;
  */
 .test--functions:before,
