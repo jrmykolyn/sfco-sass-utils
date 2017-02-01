@@ -20,7 +20,7 @@
  */
 .test--functions {
     color: getColor( red );
-    font-family: getFont( display );
+    font-family: getFont( primary, display );
 }
 
 

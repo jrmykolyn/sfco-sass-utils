@@ -10,7 +10,7 @@
     <nav class="psg-menu">
       <h1 class="psg-projectName">SF Co. SASS Utils</h1>
       
-      <p class="psg-updatedTime">Last updated on: <time>Jan 31, 2017 at 18:05</time></p>
+      <p class="psg-updatedTime">Last updated on: <time>Jan 31, 2017 at 19:05</time></p>
       <ul class="psg-componentList">
         
         
@@ -25,7 +25,7 @@
           
             <a href="#psg-link-1" class="psg-componentList-item">
               <li>
-                getAspect (@function)
+                getFont (@function)
               </li>
             </a>
           
@@ -33,7 +33,7 @@
           
             <a href="#psg-link-2" class="psg-componentList-item">
               <li>
-                on (@mixin)
+                getAspect (@function)
               </li>
             </a>
           
@@ -41,7 +41,7 @@
           
             <a href="#psg-link-3" class="psg-componentList-item">
               <li>
-                set (@mixin)
+                on (@mixin)
               </li>
             </a>
           
@@ -49,7 +49,7 @@
           
             <a href="#psg-link-4" class="psg-componentList-item">
               <li>
-                pseudo (@mixin)
+                set (@mixin)
               </li>
             </a>
           
@@ -57,7 +57,7 @@
           
             <a href="#psg-link-5" class="psg-componentList-item">
               <li>
-                descendant (@mixin)
+                pseudo (@mixin)
               </li>
             </a>
           
@@ -65,13 +65,21 @@
           
             <a href="#psg-link-6" class="psg-componentList-item">
               <li>
-                max-size (@mixin)
+                descendant (@mixin)
               </li>
             </a>
           
         
           
             <a href="#psg-link-7" class="psg-componentList-item">
+              <li>
+                max-size (@mixin)
+              </li>
+            </a>
+          
+        
+          
+            <a href="#psg-link-8" class="psg-componentList-item">
               <li>
                 min-size (@mixin)
               </li>
@@ -132,14 +140,61 @@
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-1" class="psg-componentTitle">getAspect (@function)</h2>
+            <h2 id="psg-link-1" class="psg-componentTitle">getFont (@function)</h2>
+            <div class="psg-contents">
+              <div class="psg-contents-html">
+                <p>Function fetches the specified font from a &#39;set&#39; of fonts, defined on $fontMap.</p>
+<ul>
+<li>@param {String} <code>$fontName</code> - <em>The font to fetch.</em></li>
+<li>@param {String} <code>$set</code> - <em>The set/group of fonts which contains <code>$fontName</code>.</em></li>
+<li>@return {String}</li>
+</ul>
+<h3 id="usage">Usage</h3>
+<pre><code>// Input
+body {
+    font-family: getFont( copy );
+}
+
+// Output
+body {
+    font-family: <span class="hljs-string">"Times New Roman"</span>, serif;
+}
+
+
+// NOTE:
+// Example above assumes that <span class="hljs-variable">$fontMap</span> includes the <span class="hljs-variable">$set</span> <span class="hljs-string">'default'</span>,
+// which <span class="hljs-keyword">in</span> turn has a key called <span class="hljs-string">'copy'</span> set <span class="hljs-keyword">to</span> a <span class="hljs-keyword">value</span> <span class="hljs-keyword">of</span> <span class="hljs-string">"'Times New Roman', serif"</span>.
+</code></pre><pre><code>// Input
+h1 {
+    font-family: getFont( primary, display );
+}
+
+// Output
+h1 {
+    font-family: <span class="hljs-string">"Helvetica"</span>, <span class="hljs-string">"Arial"</span>, sans-serif;
+}
+
+// NOTE:
+// Example above assumes that <span class="hljs-variable">$fontMap</span> includes the <span class="hljs-variable">$set</span> <span class="hljs-string">'display'</span>,
+// which <span class="hljs-keyword">in</span> turn has a key called <span class="hljs-string">'primary'</span> set <span class="hljs-keyword">to</span> a <span class="hljs-keyword">value</span> <span class="hljs-keyword">of</span> <span class="hljs-string">"'Helvetica', 'Arial', serif"</span>.
+</code></pre>
+              </div>
+              <div class="psg-contents-rule">
+                <pre><code class="lang-css"></code></pre>
+              </div>
+            </div>
+          </section>
+          <hr class="psg-separator">
+        
+          <section class="psg-component">
+            <h2 id="psg-link-2" class="psg-componentTitle">getAspect (@function)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>Given a set of 2x numbers (<code>$dims</code>), function returns their relationship as either an integer or floating point number.</p>
 <ul>
 <li>@param {String} <code>$dims</code> - Space-delimited set of dimensions. Function expects the <em>first number</em> to be the <em>width</em>, <em>second</em> to be the <em>height</em>.</li>
 <li>@param {Boolean} <code>$returnHeightVal</code> - If set to <code>false</code>, function will return HEIGHT/WIDTH. Argument is set to <code>true</code> by default.</li>
-<li>@return {Integer|Float}</li>
+<li>@return {Number}</li>
 </ul>
 <h3 id="usage">Usage</h3>
 <pre><code><span class="hljs-comment">// Input</span>
@@ -172,7 +227,7 @@
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-2" class="psg-componentTitle">on (@mixin)</h2>
+            <h2 id="psg-link-3" class="psg-componentTitle">on (@mixin)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>For each valid &#39;state&#39; (eg. pseduo-selector) received via the <code>$states</code> argument,
@@ -211,7 +266,7 @@ Note that the mixin validates each &#39;state&#39; against an internally defined
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-3" class="psg-componentTitle">set (@mixin)</h2>
+            <h2 id="psg-link-4" class="psg-componentTitle">set (@mixin)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>Mixin creates 1x declaration for each item in a list of properties (<code>$props</code>).
@@ -251,7 +306,7 @@ img {
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-4" class="psg-componentTitle">pseudo (@mixin)</h2>
+            <h2 id="psg-link-5" class="psg-componentTitle">pseudo (@mixin)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>For each valid pseudo element received via the <code>$elements</code> argument,
@@ -288,7 +343,7 @@ Note that the mixin validates each &#39;element&#39; against an internally defin
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-5" class="psg-componentTitle">descendant (@mixin)</h2>
+            <h2 id="psg-link-6" class="psg-componentTitle">descendant (@mixin)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>For each valid &#39;descendant keyword&#39; received via the <code>$descendants</code> argument,
@@ -322,7 +377,7 @@ Note that the mixin validates each &#39;descendant keyword&#39; against an inter
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-6" class="psg-componentTitle">max-size (@mixin)</h2>
+            <h2 id="psg-link-7" class="psg-componentTitle">max-size (@mixin)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>Mixin allows for quick setting of the <code>max-width</code> and <code>max-height</code> properties on a given element.</p>
@@ -362,7 +417,7 @@ Note that the mixin validates each &#39;descendant keyword&#39; against an inter
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-7" class="psg-componentTitle">min-size (@mixin)</h2>
+            <h2 id="psg-link-8" class="psg-componentTitle">min-size (@mixin)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>Mixin allows for quick setting of the <code>min-width</code> and <code>min-height</code> properties on a given element.</p>

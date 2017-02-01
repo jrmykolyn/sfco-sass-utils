@@ -5,7 +5,7 @@
  */
 .test--functions {
   color: #FF0000;
-  font-family: serif;
+  font-family: "Helvetica", "Arial", sans-serif;
 }
 /*!
  * If test is successful, rule(s) below should include styles for:

@@ -1,3 +1,47 @@
+/*
+@styleguide
+
+@title getFont (@function)
+
+Function fetches the specified font from a 'set' of fonts, defined on $fontMap.
+
+- @param {String} `$fontName` - *The font to fetch.*
+- @param {String} `$set` - *The set/group of fonts which contains `$fontName`.*
+- @return {String}
+
+### Usage
+```
+// Input
+body {
+    font-family: getFont( copy );
+}
+
+// Output
+body {
+    font-family: "Times New Roman", serif;
+}
+
+
+// NOTE:
+// Example above assumes that $fontMap includes the $set 'default',
+// which in turn has a key called 'copy' set to a value of "'Times New Roman', serif".
+```
+```
+// Input
+h1 {
+    font-family: getFont( primary, display );
+}
+
+// Output
+h1 {
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+// NOTE:
+// Example above assumes that $fontMap includes the $set 'display',
+// which in turn has a key called 'primary' set to a value of "'Helvetica', 'Arial', serif".
+```
+*/
 @function getFont( $fontName, $set: default ) {
     @if ( global-variable-exists( fontMap ) == false ) {
         @error 'Whoops! Please ensure that the `$fontMap` variable exists.';
@@ -7,7 +51,8 @@
         @error 'Please ensure that the `#{$set}` key exists on $fontMap, and is a list.';
     }
 
-    $fonts: map-get( $fontMap, $set );
+    $fontSet: map-get( $fontMap, $set );
+    $font: map-get( $fontSet, $fontName );
 
-    @return map-get( $fonts, $fontName );
+    @return $font;
 }
