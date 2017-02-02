@@ -6,6 +6,7 @@ var Promise = require( 'bluebird' );
 // DECLARE VARS
 const dirs = [ 'mixins', 'functions' ];
 const targetPath = `${__dirname}/..`;
+const outFile = 'temp.txt'; // TODO: Update value of `outFile` when script is complete.
 
 var filterDirs = filterMaker( dirs );
 
@@ -57,7 +58,7 @@ readDir( targetPath )
     .then(
         ( data ) => {
             data.forEach( ( item ) => {
-                fs.appendFile( `${__dirname}/output.txt`, `${item}\n`, ( err ) => {
+                fs.appendFile( `${__dirname}/${outFile}`, `${item}\n`, ( err ) => {
                     if ( err ) {
                         console.error( err );
                     }
