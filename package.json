@@ -18,6 +18,7 @@
   "homepage": "https://github.com/jrmykolyn/sfco-sass-utils#readme",
   "devDependencies": {
     "autoprefixer": "^6.6.1",
+    "bluebird": "^3.4.7",
     "cssnano": "^3.10.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
