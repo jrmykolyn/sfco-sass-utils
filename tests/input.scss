@@ -123,3 +123,26 @@
 .text--mixins--min-size--2x-args {
     @include min-size( 25% 600px );
 }
+
+
+/*!
+ * If test is successful, rule(s) below should include styles for:
+ * - color;
+ */
+.test--mixins--parent {
+    @include parent {
+        color: red;
+    }
+
+    @include parent( div ) {
+        color: blue;
+    }
+
+    @include parent( nav, '.is-active' ) {
+        color: green;
+    }
+
+    @include parent( null, '[type="text"]' ) {
+        color: yellow;
+    }
+}

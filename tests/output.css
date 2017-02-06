@@ -94,3 +94,19 @@
   min-width: 25%;
   min-height: 600px;
 }
+/*!
+ * If test is successful, rule(s) below should include styles for:
+ * - color;
+ */
+* > .test--mixins--parent {
+  color: red;
+}
+div > .test--mixins--parent {
+  color: blue;
+}
+nav.is-active > .test--mixins--parent {
+  color: green;
+}
+[type="text"] > .test--mixins--parent {
+  color: yellow;
+}
