@@ -90,7 +90,7 @@
  * - min-width;
  * - min-width;
  */
-.text--mixins--min-size--2x-args {
+.test--mixins--min-size--2x-args {
   min-width: 25%;
   min-height: 600px;
 }
