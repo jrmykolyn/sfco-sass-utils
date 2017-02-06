@@ -1,0 +1,9 @@
+@mixin parent( $type: '*', $modifier: '' ) {
+    @if ( $type == null ) {
+        $type: '';
+    }
+
+    #{$type}#{$modifier} > & {
+        @content;
+    }
+}
