@@ -10,7 +10,7 @@
     <nav class="psg-menu">
       <h1 class="psg-projectName">SF Co. SASS Utils</h1>
       
-      <p class="psg-updatedTime">Last updated on: <time>Feb 01, 2017 at 18:19</time></p>
+      <p class="psg-updatedTime">Last updated on: <time>Feb 06, 2017 at 09:28</time></p>
       <ul class="psg-componentList">
         
         
@@ -89,13 +89,21 @@
           
             <a href="#psg-link-9" class="psg-componentList-item">
               <li>
-                max-size (@mixin)
+                parent (@mixin)
               </li>
             </a>
           
         
           
             <a href="#psg-link-10" class="psg-componentList-item">
+              <li>
+                max-size (@mixin)
+              </li>
+            </a>
+          
+        
+          
+            <a href="#psg-link-11" class="psg-componentList-item">
               <li>
                 min-size (@mixin)
               </li>
@@ -471,7 +479,62 @@ Note that the mixin validates each &#39;descendant keyword&#39; against an inter
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-9" class="psg-componentTitle">max-size (@mixin)</h2>
+            <h2 id="psg-link-9" class="psg-componentTitle">parent (@mixin)</h2>
+            <div class="psg-contents">
+              <div class="psg-contents-html">
+                <p>Mixin allows for the building of rules based on the parent of the current selector.
+By default, including the <code>parent</code> mixin with no arguments will result in a new rule, with <code>* &gt;</code> prepended to the current selector.
+If the mixin is called with 1x argument, the &#39;*&#39; will be replaced with the value provided.
+If the mixin is called with 2x arguments, the second value will be appended to the first (eg. {TYPE}{MODIFIER}).</p>
+<ul>
+<li>@param {String} <code>$type</code></li>
+<li>@param {String} <code>$modifier</code></li>
+</ul>
+<h3 id="usage">Usage</h3>
+<pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">section</span> {
+    <span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> parent</span> {</span>
+        <span class="hljs-attribute">background-color</span><span class="hljs-value">: grey;</span>
+    }
+}
+
+<span class="hljs-comment">// Output</span>
+* &gt; <span class="hljs-tag">section</span> {
+    <span class="hljs-attribute">background-color</span><span class="hljs-value">: grey;</span>
+}
+</code></pre><pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">p</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">parent</span>( li ) {
+        <span class="hljs-attribute">text-decoration</span>: underline;
+    }
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">li</span> &gt; <span class="hljs-tag">p</span> {
+    <span class="hljs-attribute">text-decoration</span>: underline;
+}
+</code></pre><pre><code><span class="hljs-comment">// Input</span>
+<span class="hljs-tag">li</span> {
+    <span class="hljs-variable">@include</span> <span class="hljs-function">parent</span>( ul, <span class="hljs-string">'.is-active'</span> ) {
+        <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;
+    }
+}
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-tag">ul</span><span class="hljs-class">.is-active</span> <span class="hljs-tag">li</span> {
+    <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;
+}
+</code></pre>
+              </div>
+              <div class="psg-contents-rule">
+                <pre><code class="lang-css"></code></pre>
+              </div>
+            </div>
+          </section>
+          <hr class="psg-separator">
+        
+          <section class="psg-component">
+            <h2 id="psg-link-10" class="psg-componentTitle">max-size (@mixin)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>Mixin allows for quick setting of the <code>max-width</code> and <code>max-height</code> properties on a given element.</p>
@@ -511,7 +574,7 @@ Note that the mixin validates each &#39;descendant keyword&#39; against an inter
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-10" class="psg-componentTitle">min-size (@mixin)</h2>
+            <h2 id="psg-link-11" class="psg-componentTitle">min-size (@mixin)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>Mixin allows for quick setting of the <code>min-width</code> and <code>min-height</code> properties on a given element.</p>
