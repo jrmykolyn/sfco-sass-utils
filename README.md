@@ -20,5 +20,9 @@ SASS Utils. is a library of SASS `mixins` and `functions` which aim to simplify 
 - For current documentation, navigate to the `sfco-sass-utils/docs/` folder and open the `index.html` file.
 
 
+## TODO
+- Look into escaping `#{...}` characters within inline function/mixin documentation (currently stripped out during compilation process).
+
+
 [1]: https://thoughtbot.com/
 [2]: http://bourbon.io/
