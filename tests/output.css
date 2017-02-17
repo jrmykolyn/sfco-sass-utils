@@ -38,6 +38,13 @@
 }
 /*!
  * If test is successful, rule(s) below should include styles for:
+ * - background-image: ...;
+ */
+.test--functions--get-path {
+  background-image: url(./assets/images/icon--share.png);
+}
+/*!
+ * If test is successful, rule(s) below should include styles for:
  * - ...
  * - `margin` and `padding`;
  * - `:hover`;
