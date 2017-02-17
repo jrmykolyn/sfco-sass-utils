@@ -1,0 +1,43 @@
+/*
+@styleguide
+
+@title getPath (@function)
+
+TODO[@jrmykolyn] - Add description for `getPath()`.
+
+- @param {String} `$pathName`
+- @param {String} `$set`
+- @param {String}
+
+### Usage
+```
+// Input
+.icon--share {
+    background-image: url(#{getPath( images )}/icon--share.png);
+}
+
+// Output
+.icon--share {
+    background-image: url(./assets/images/icon--share.png);
+}
+
+
+// NOTE:
+// Example above assumes that $pathMap includes the $set 'default',
+// which in turn has a key called `images` set to a value of `./assets/images`.
+```
+*/
+@function getPath( $pathName: null, $set: default ) {
+    @if ( global-variable-exists( pathMap ) == false ) {
+        @error 'Whoops! Please ensure that the `$pathMap` variable exists.';
+    }
+
+    @if ( map-has-key( $pathMap, $set ) == false ) {
+        @error 'Please ensure that the `#{$set}` key exists on $pathMap, and is a list.';
+    }
+
+    $pathSet: map-get( $pathMap, $set );
+    $path: map-get( $pathSet, $pathName );
+
+    @return $path;
+}
