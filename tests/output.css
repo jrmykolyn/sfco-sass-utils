@@ -117,3 +117,14 @@ nav.is-active > .test--mixins--parent {
 [type="text"] > .test--mixins--parent {
   color: yellow;
 }
+/*!
+ * If test is successful, rule(s) below should include styles for:
+ * - font-size;
+ * - font-weight;
+ * - text-transform;
+ */
+.test--mixins--print-map {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}

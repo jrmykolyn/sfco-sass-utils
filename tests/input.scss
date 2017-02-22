@@ -155,3 +155,14 @@
         color: yellow;
     }
 }
+
+
+/*!
+ * If test is successful, rule(s) below should include styles for:
+ * - font-size;
+ * - font-weight;
+ * - text-transform;
+ */
+.test--mixins--print-map {
+    @include print-map( $fontStylesMap );
+}
