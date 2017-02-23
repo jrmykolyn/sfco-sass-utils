@@ -1,0 +1,22 @@
+@mixin dims( $dims ) {
+    // Validate `$dims` arg.
+    @if ( $dims != null && length( $dims ) >= 1 ) {
+        // Declare local vars.
+        $width: nth( $dims, 1 );
+        $height: null;
+
+        // Check length of `$dims` arg.
+        @if ( length( $dims ) == 1 ) {
+            width: $width;
+            height: $width;
+        } @else {
+            // Re-assign `$height` var.
+            $height: nth( $dims, 2 );
+
+            // Set `width` and `height` props. if applicable.
+            @if ( $width != null ) { width: $width; }
+            @if ( $height != null ) { height: $height; }
+        }
+
+    }
+}
