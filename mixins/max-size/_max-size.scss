@@ -7,7 +7,7 @@ Mixin allows for quick setting of the `max-width` and `max-height` properties on
 
 If the list argument contains 1x item: both properties will be set to the provided value.
 
-If the list arguments contains 2x or more items: `max-width` will be set equal to the first value; `max-height` will be set equal to the second value
+If the list argument contains 2x or more items: `max-width` will be set equal to the first value; `max-height` will be set equal to the second value
 
 - @param {String} `$maxDims` - A list of values
 
