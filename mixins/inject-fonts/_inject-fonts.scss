@@ -1,0 +1,29 @@
+@mixin inject-fonts( $fontData: null, $fontPath: '' ) {
+    // VALIDATE EXISTENCE/TYPE OF `$fontData`
+    // CHECK FOR INCLUSON OF `$fontPath` ARG.
+        // IF PRESENT --> ASSIGN
+        // IF ABSENT --> FALLBACK TO DEFAULT
+    // VALIDATE EXISTENCE/TYPE OF `$fontPath`
+
+    // LOOP OVER `$fontData`
+        // EXTRACT NAME AND FILES
+        // LOOP OVER FILES
+            // EXTRACT FILE NAME
+            // EXTRACT WEIGHT
+            // EXTRACT STYLE
+            // EXTRACT FORMATS
+            // INJECT CURRENT FILE
+}
+
+// @mixin inject-fonts( $fontData: null, $fontPath: '' ) {
+//     @if ( $fontMap == null ) {
+//         @error 'Whoops! The `inject-fonts` mixin requires a `$fontMap` argument.';
+//     }
+//
+//     @each $subsetName, $subsetFonts in $fontMap {
+//         @each $fontName, $fontFile in $subsetFonts {
+//             // INJECT FONT
+//             content: $fontFile;
+//         }
+//     }
+// }

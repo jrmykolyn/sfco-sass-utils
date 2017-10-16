@@ -31,6 +31,19 @@ $fontMap: (
     )
 );
 
+/**
+ * ...
+ */
+$fontData: (
+    'FONT NAME': (
+        ( 'font-name', 500 normal ( woff woff2 ) ),
+    ),
+    'FONT NAME 2': (
+        ( 'font-name-2-file-1', 500 normal ( woff woff2 ) ),
+        ( 'font-name-2-file-2', 600 normal ( woff woff2 ) )
+    )
+);
+
 
 /**
  * ...

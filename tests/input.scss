@@ -204,3 +204,11 @@
 .text--mixins--dims--2x-values-height-only {
     @include dims( null 200px );
 }
+
+
+/*!
+ * ...
+ */
+.test--mixins--inject-fonts {
+    @include inject-fonts( $fontMap );
+}
