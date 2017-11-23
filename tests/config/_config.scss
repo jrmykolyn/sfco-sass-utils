@@ -10,8 +10,10 @@ $demoMap: (
 
 /**
  * ...
+ *
+ * NOTE: Legacy `$colorMap` is also supported.
  */
-$colorMap: (
+$color-map: (
     base: (
         red: #FF0000
     ),

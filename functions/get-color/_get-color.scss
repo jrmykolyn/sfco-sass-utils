@@ -3,10 +3,10 @@
 
 @title getColor (@function)
 
-Function fetches the specified color from a 'set' of colors, defined on $colorMap.
+Function fetches the specified color from a 'set' of colors, defined on $color-map.
 
-- @param {String} `$colorName` - *The color to fetch.*
-- @param {String} `$colorSet` - *The set/group of colors which contains `$colorName`.*
+- @param {String} `$color-name` - *The color to fetch.*
+- @param {String} `$color-set` - *The set/group of colors which contains `$color-name`.*
 - @return {String}
 
 ### Usage
@@ -23,7 +23,7 @@ p {
 
 
 // NOTE:
-// Example above assumes that $colorMap includes the key 'black', set to a value of #000.
+// Example above assumes that $color-map includes the key 'black', set to a value of #000.
 ```
 ```
 // Input
@@ -37,7 +37,7 @@ h1 {
 }
 
 // NOTE:
-// Example above assumes that $colorMap includes the $colorSet 'placeholder',
+// Example above assumes that $color-map includes the $color-set 'placeholder',
 // which in turn has a key called 'base' set to value of #FAFAFA.
 ```
 */
@@ -45,7 +45,7 @@ h1 {
     @return getColor( $color-name, $color-set );
 }
 
-@function getColor( $colorName, $colorSet: base ) {
+@function getColor( $color-name, $color-set: base ) {
   $target: null;
   $colors: null;
 
@@ -55,20 +55,20 @@ h1 {
   } @else if global-variable-exists( color-map ) {
       $target: $color-map;
   } @else {
-    @error 'Whoops! Please ensure that either of the following variables exists: `$colorMap`; `$color-map`.';
+    @error 'Whoops! Please ensure that either of the following variables exist: `$colorMap`; `$color-map`.';
   }
 
   // Grab target submap or error.
-  @if map-has-key( $colorMap, $colorSet ) {
-    $colors: map-get( $colorMap, $colorSet );
+  @if map-has-key( $target, $color-set ) {
+    $colors: map-get( $target, $color-set );
   } @else {
-    @error 'Please ensure that the `#{$colorSet}` key exists, and is a list.';
+    @error 'Please ensure that the `#{$color-set}` key exists, and is a list.';
   }
 
   // Return requested color or error.
-  @if map-has-key( $colors, $colorName ) {
-    @return map-get( $colors, $colorName );
+  @if map-has-key( $colors, $color-name ) {
+    @return map-get( $colors, $color-name );
   } @else {
-    @error 'Map `#{$colorSet}` does not include key `#{$colorName}`.';
+    @error 'Map `#{$color-set}` does not include key `#{$color-name}`.';
   }
 }
