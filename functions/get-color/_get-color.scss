@@ -41,16 +41,34 @@ h1 {
 // which in turn has a key called 'base' set to value of #FAFAFA.
 ```
 */
+@function get-color( $color-name, $color-set: base ) {
+    @return getColor( $color-name, $color-set );
+}
+
 @function getColor( $colorName, $colorSet: base ) {
-  @if global-variable-exists( colorMap ) == false {
-    @error 'Whoops! Please ensure that the `$colorMap` variable exists.';
+  $target: null;
+  $colors: null;
+
+  // Validate existence of 'color map' or error.
+  @if global-variable-exists( colorMap ) {
+      $target: $colorMap;
+  } @else if global-variable-exists( color-map ) {
+      $target: $color-map;
+  } @else {
+    @error 'Whoops! Please ensure that either of the following variables exists: `$colorMap`; `$color-map`.';
   }
 
-  $colors: map-get( $colorMap, $colorSet );
-
-  @if variable-exists( colors ) == false {
-    @error 'Please ensure that the `#{$colorSet}` key exists on $colorMap, and is a list.';
+  // Grab target submap or error.
+  @if map-has-key( $colorMap, $colorSet ) {
+    $colors: map-get( $colorMap, $colorSet );
+  } @else {
+    @error 'Please ensure that the `#{$colorSet}` key exists, and is a list.';
   }
 
-  @return map-get( $colors, $colorName );
+  // Return requested color or error.
+  @if map-has-key( $colors, $colorName ) {
+    @return map-get( $colors, $colorName );
+  } @else {
+    @error 'Map `#{$colorSet}` does not include key `#{$colorName}`.';
+  }
 }
