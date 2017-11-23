@@ -1,12 +1,16 @@
 /*!
  * If test is successful, rule(s) below should include styles for:
- * - color: #FF0000;
+ * - color: ...;
+ * - color: ...;
+ * - color: ...;
  * - font-family: ...;
  * - display: ...;
  * - overflow: ...;
  */
 .test--functions {
   color: #FF0000;
+  color: #ffff00;
+  color: #800080;
   font-family: "Helvetica", "Arial", sans-serif;
   display: block;
   overflow: hidden;

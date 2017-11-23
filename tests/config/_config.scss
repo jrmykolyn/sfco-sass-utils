@@ -14,7 +14,17 @@ $demoMap: (
 $colorMap: (
     base: (
         red: #FF0000
-    )
+    ),
+    primary: (
+        red: #ff0000,
+        yellow: #ffff00,
+        blue: #0000ff,
+    ),
+    secondary: (
+        orange: #ffa500,
+        green: #00ff00,
+        purple: #800080,
+    ),
 );
 
 
