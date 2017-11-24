@@ -5,6 +5,8 @@
 
 Function fetches the specified color from a 'set' of colors, defined on $color-map.
 
+NOTE: This function may also be invoked as `getColor()`
+
 - @param {String} `$color-name` - *The color to fetch.*
 - @param {String} `$color-set` - *The set/group of colors which contains `$color-name`.*
 - @return {String}

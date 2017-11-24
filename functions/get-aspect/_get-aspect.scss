@@ -5,6 +5,8 @@
 
 Given a set of 2x numbers (`$dims`), function returns their relationship as either an integer or floating point number.
 
+NOTE: This function may also be invoked as `getAspect()`
+
 - @param {String} `$dims` - Space-delimited set of dimensions. Function expects the *first number* to be the *width*, *second* to be the *height*.
 - @param {Boolean} `$return-height-val` - If set to `false`, function will return HEIGHT/WIDTH. Argument is set to `true` by default.
 - @return {Number}

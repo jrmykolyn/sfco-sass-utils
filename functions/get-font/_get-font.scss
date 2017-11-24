@@ -5,6 +5,8 @@
 
 Function fetches the specified font from a 'set' of fonts, defined on $fontMap.
 
+NOTE: This function may also be invoked as `getFont()`
+
 - @param {String} `$font-name` - *The font to fetch.*
 - @param {String} `$set` - *The set/group of fonts which contains `$font-name`.*
 - @return {String}

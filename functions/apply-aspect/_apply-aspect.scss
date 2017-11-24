@@ -5,6 +5,8 @@
 
 Given a set of 2x numbers (`$dims`) and a value (`$value`), function applies the aspect ratio to the value and returns the result.
 
+NOTE: This function may also be invoked as `applyAspect()`
+
 - @param {String} `$dims` - *Space-delimited set of dimensions. Function expects the first number to be the width, second to be the height.*
 - @param {String|Number} `$value` - *Value against which the aspect ratio will be applied. Defaults to '100%' if no argument is provided.*
 - @return {Number}

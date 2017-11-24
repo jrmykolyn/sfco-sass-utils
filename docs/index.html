@@ -10,7 +10,7 @@
     <nav class="psg-menu">
       <h1 class="psg-projectName">SF Co. SASS Utils</h1>
       
-      <p class="psg-updatedTime">Last updated on: <time>Feb 23, 2017 at 11:12</time></p>
+      <p class="psg-updatedTime">Last updated on: <time>Nov 24, 2017 at 09:15</time></p>
       <ul class="psg-componentList">
         
         
@@ -25,7 +25,7 @@
           
             <a href="#psg-link-1" class="psg-componentList-item">
               <li>
-                getColor (@function)
+                get-color (@function)
               </li>
             </a>
           
@@ -33,7 +33,7 @@
           
             <a href="#psg-link-2" class="psg-componentList-item">
               <li>
-                getFont (@function)
+                get-font (@function)
               </li>
             </a>
           
@@ -41,7 +41,7 @@
           
             <a href="#psg-link-3" class="psg-componentList-item">
               <li>
-                getPath (@function)
+                get-path (@function)
               </li>
             </a>
           
@@ -49,7 +49,7 @@
           
             <a href="#psg-link-4" class="psg-componentList-item">
               <li>
-                getAspect (@function)
+                get-aspect (@function)
               </li>
             </a>
           
@@ -57,7 +57,7 @@
           
             <a href="#psg-link-5" class="psg-componentList-item">
               <li>
-                applyAspect (@function)
+                apply-aspect (@function)
               </li>
             </a>
           
@@ -189,19 +189,20 @@ div {
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-1" class="psg-componentTitle">getColor (@function)</h2>
+            <h2 id="psg-link-1" class="psg-componentTitle">get-color (@function)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
-                <p>Function fetches the specified color from a &#39;set&#39; of colors, defined on $colorMap.</p>
+                <p>Function fetches the specified color from a &#39;set&#39; of colors, defined on $color-map.</p>
+<p>NOTE: This function may also be invoked as <code>getColor()</code></p>
 <ul>
-<li>@param {String} <code>$colorName</code> - <em>The color to fetch.</em></li>
-<li>@param {String} <code>$colorSet</code> - <em>The set/group of colors which contains <code>$colorName</code>.</em></li>
+<li>@param {String} <code>$color-name</code> - <em>The color to fetch.</em></li>
+<li>@param {String} <code>$color-set</code> - <em>The set/group of colors which contains <code>$color-name</code>.</em></li>
 <li>@return {String}</li>
 </ul>
 <h3 id="usage">Usage</h3>
 <pre><code><span class="hljs-comment">// Input</span>
 <span class="hljs-tag">p</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-function">getColor</span>( black );
+    <span class="hljs-attribute">color</span>: <span class="hljs-function">get-color</span>( black );
 }
 
 <span class="hljs-comment">// Output</span>
@@ -211,10 +212,10 @@ div {
 
 
 <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span></span>
-<span class="hljs-comment">// Example above assumes that $colorMap includes the key 'black', set to a value of #000.</span>
+<span class="hljs-comment">// Example above assumes that $color-map includes the key 'black', set to a value of #000.</span>
 </code></pre><pre><code><span class="hljs-comment">// Input</span>
 <span class="hljs-tag">h1</span> {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-function">getColor</span>( base, placeholder );
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-function">get-color</span>( base, placeholder );
 }
 
 <span class="hljs-comment">// Output</span>
@@ -223,7 +224,7 @@ div {
 }
 
 <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span></span>
-<span class="hljs-comment">// Example above assumes that $colorMap includes the $colorSet 'placeholder',</span>
+<span class="hljs-comment">// Example above assumes that $color-map includes the $color-set 'placeholder',</span>
 <span class="hljs-comment">// which in turn has a key called 'base' set to value of #FAFAFA.</span>
 </code></pre>
               </div>
@@ -235,19 +236,20 @@ div {
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-2" class="psg-componentTitle">getFont (@function)</h2>
+            <h2 id="psg-link-2" class="psg-componentTitle">get-font (@function)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>Function fetches the specified font from a &#39;set&#39; of fonts, defined on $fontMap.</p>
+<p>NOTE: This function may also be invoked as <code>getFont()</code></p>
 <ul>
-<li>@param {String} <code>$fontName</code> - <em>The font to fetch.</em></li>
-<li>@param {String} <code>$set</code> - <em>The set/group of fonts which contains <code>$fontName</code>.</em></li>
+<li>@param {String} <code>$font-name</code> - <em>The font to fetch.</em></li>
+<li>@param {String} <code>$set</code> - <em>The set/group of fonts which contains <code>$font-name</code>.</em></li>
 <li>@return {String}</li>
 </ul>
 <h3 id="usage">Usage</h3>
 <pre><code>// Input
 body {
-    font-family: getFont( copy );
+    font-family: get-font( copy );
 }
 
 // Output
@@ -261,7 +263,7 @@ body {
 // which <span class="hljs-keyword">in</span> turn has a key called <span class="hljs-string">'copy'</span> set <span class="hljs-keyword">to</span> a <span class="hljs-keyword">value</span> <span class="hljs-keyword">of</span> <span class="hljs-string">"'Times New Roman', serif"</span>.
 </code></pre><pre><code>// Input
 h1 {
-    font-family: getFont( primary, display );
+    font-family: get-font( primary, display );
 }
 
 // Output
@@ -282,19 +284,20 @@ h1 {
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-3" class="psg-componentTitle">getPath (@function)</h2>
+            <h2 id="psg-link-3" class="psg-componentTitle">get-path (@function)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
-                <p>TODO[@jrmykolyn] - Add description for <code>getPath()</code>.</p>
+                <p>TODO[@jrmykolyn] - Add description for <code>get-path()</code>.</p>
+<p>NOTE: This function may also be invoked as <code>getPath()</code></p>
 <ul>
-<li>@param {String} <code>$pathName</code></li>
+<li>@param {String} <code>$path-name</code></li>
 <li>@param {String} <code>$set</code></li>
-<li>@param {String}</li>
+<li>@return {String}</li>
 </ul>
 <h3 id="usage">Usage</h3>
 <pre><code>// Input
 .icon--share {
-    background-image: url(getPath(images)/icon--share.png);
+    background-image: url(get-path(images)/icon--share.png);
 }
 
 // Output
@@ -316,20 +319,21 @@ h1 {
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-4" class="psg-componentTitle">getAspect (@function)</h2>
+            <h2 id="psg-link-4" class="psg-componentTitle">get-aspect (@function)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>Given a set of 2x numbers (<code>$dims</code>), function returns their relationship as either an integer or floating point number.</p>
+<p>NOTE: This function may also be invoked as <code>getAspect()</code></p>
 <ul>
 <li>@param {String} <code>$dims</code> - Space-delimited set of dimensions. Function expects the <em>first number</em> to be the <em>width</em>, <em>second</em> to be the <em>height</em>.</li>
-<li>@param {Boolean} <code>$returnHeightVal</code> - If set to <code>false</code>, function will return HEIGHT/WIDTH. Argument is set to <code>true</code> by default.</li>
+<li>@param {Boolean} <code>$return-height-val</code> - If set to <code>false</code>, function will return HEIGHT/WIDTH. Argument is set to <code>true</code> by default.</li>
 <li>@return {Number}</li>
 </ul>
 <h3 id="usage">Usage</h3>
 <pre><code><span class="hljs-comment">// Input</span>
 <span class="hljs-tag">div</span> {
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
-    <span class="hljs-attribute">height</span>: <span class="hljs-function">getAspect</span>( <span class="hljs-number">16</span> <span class="hljs-number">9</span>, false )*<span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-function">get-aspect</span>( <span class="hljs-number">16</span> <span class="hljs-number">9</span>, false )*<span class="hljs-number">100%</span>;
 }
 
 <span class="hljs-comment">// Output</span>
@@ -339,7 +343,7 @@ h1 {
 }
 </code></pre><pre><code><span class="hljs-comment">// Input</span>
 <span class="hljs-string">span:</span>before {
-<span class="hljs-label">    content:</span> <span class="hljs-string">"500 is getAspect(500 200) times greater than 200."</span>
+<span class="hljs-label">    content:</span> <span class="hljs-string">"500 is get-aspect(500 200) times greater than 200."</span>
 }
 
 <span class="hljs-comment">// Output</span>
@@ -356,10 +360,11 @@ h1 {
           <hr class="psg-separator">
         
           <section class="psg-component">
-            <h2 id="psg-link-5" class="psg-componentTitle">applyAspect (@function)</h2>
+            <h2 id="psg-link-5" class="psg-componentTitle">apply-aspect (@function)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>Given a set of 2x numbers (<code>$dims</code>) and a value (<code>$value</code>), function applies the aspect ratio to the value and returns the result.</p>
+<p>NOTE: This function may also be invoked as <code>applyAspect()</code></p>
 <ul>
 <li>@param {String} <code>$dims</code> - <em>Space-delimited set of dimensions. Function expects the first number to be the width, second to be the height.</em></li>
 <li>@param {String|Number} <code>$value</code> - <em>Value against which the aspect ratio will be applied. Defaults to &#39;100%&#39; if no argument is provided.</em></li>
@@ -368,8 +373,8 @@ h1 {
 <h3 id="usage">Usage</h3>
 <pre><code><span class="hljs-comment">// Input</span>
 <span class="hljs-tag">div</span> {
-    <span class="hljs-attribute">width</span>: <span class="hljs-function">applyAspect</span>( <span class="hljs-number">3</span> <span class="hljs-number">4</span> );
-    <span class="hljs-attribute">height</span>: <span class="hljs-function">applyAspect</span>( <span class="hljs-number">2</span> <span class="hljs-number">3</span>, <span class="hljs-number">600px</span> );
+    <span class="hljs-attribute">width</span>: <span class="hljs-function">apply-aspect</span>( <span class="hljs-number">3</span> <span class="hljs-number">4</span> );
+    <span class="hljs-attribute">height</span>: <span class="hljs-function">apply-aspect</span>( <span class="hljs-number">2</span> <span class="hljs-number">3</span>, <span class="hljs-number">600px</span> );
 }
 
 <span class="hljs-comment">// Output</span>
@@ -599,7 +604,7 @@ If the mixin is called with 2x arguments, the second value will be appended to t
 <p>If the list argument contains 1x item: both properties will be set to the provided value.</p>
 <p>If the list argument contains 2x or more items: <code>max-width</code> will be set equal to the first value; <code>max-height</code> will be set equal to the second value</p>
 <ul>
-<li>@param {String} <code>$maxDims</code> - A list of values</li>
+<li>@param {String} <code>$max-dims</code> - A list of values</li>
 </ul>
 <h3 id="usage">Usage</h3>
 <pre><code><span class="hljs-comment">// Input</span>
@@ -639,7 +644,7 @@ If the mixin is called with 2x arguments, the second value will be appended to t
 <p>If the list argument contains 1x item: both properties will be set to the provided value.</p>
 <p>If the list arguments contains 2x or more items: <code>max-width</code> will be set equal to the first value; <code>max-height</code> will be set equal to the second value</p>
 <ul>
-<li>@param {String} <code>$minDims</code> - A list of values</li>
+<li>@param {String} <code>$min-dims</code> - A list of values</li>
 </ul>
 <h3 id="usage">Usage</h3>
 <pre><code><span class="hljs-comment">// Input</span>
