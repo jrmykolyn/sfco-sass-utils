@@ -1,9 +1,9 @@
 /*
 @styleguide
 
-@title getPath (@function)
+@title get-path (@function)
 
-TODO[@jrmykolyn] - Add description for `getPath()`.
+TODO[@jrmykolyn] - Add description for `get-path()`.
 
 - @param {String} `$path-name`
 - @param {String} `$set`
@@ -13,7 +13,7 @@ TODO[@jrmykolyn] - Add description for `getPath()`.
 ```
 // Input
 .icon--share {
-    background-image: url(#{getPath( images )}/icon--share.png);
+    background-image: url(#{get-path( images )}/icon--share.png);
 }
 
 // Output

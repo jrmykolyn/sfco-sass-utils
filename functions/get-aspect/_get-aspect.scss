@@ -1,7 +1,7 @@
 /*
 @styleguide
 
-@title getAspect (@function)
+@title get-aspect (@function)
 
 Given a set of 2x numbers (`$dims`), function returns their relationship as either an integer or floating point number.
 
@@ -14,7 +14,7 @@ Given a set of 2x numbers (`$dims`), function returns their relationship as eith
 // Input
 div {
     width: 100%;
-    height: getAspect( 16 9, false )*100%;
+    height: get-aspect( 16 9, false )*100%;
 }
 
 // Output
@@ -26,7 +26,7 @@ div {
 ```
 // Input
 span:before {
-    content: "500 is #{getAspect( 500 200 )} times greater than 200."
+    content: "500 is #{get-aspect( 500 200 )} times greater than 200."
 }
 
 // Output

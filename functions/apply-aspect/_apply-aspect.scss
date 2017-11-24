@@ -1,7 +1,7 @@
 /*
 @styleguide
 
-@title applyAspect (@function)
+@title apply-aspect (@function)
 
 Given a set of 2x numbers (`$dims`) and a value (`$value`), function applies the aspect ratio to the value and returns the result.
 
@@ -13,8 +13,8 @@ Given a set of 2x numbers (`$dims`) and a value (`$value`), function applies the
 ```
 // Input
 div {
-    width: applyAspect( 3 4 );
-    height: applyAspect( 2 3, 600px );
+    width: apply-aspect( 3 4 );
+    height: apply-aspect( 2 3, 600px );
 }
 
 // Output

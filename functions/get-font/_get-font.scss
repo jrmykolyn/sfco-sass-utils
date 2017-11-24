@@ -1,7 +1,7 @@
 /*
 @styleguide
 
-@title getFont (@function)
+@title get-font (@function)
 
 Function fetches the specified font from a 'set' of fonts, defined on $fontMap.
 
@@ -13,7 +13,7 @@ Function fetches the specified font from a 'set' of fonts, defined on $fontMap.
 ```
 // Input
 body {
-    font-family: getFont( copy );
+    font-family: get-font( copy );
 }
 
 // Output
@@ -29,7 +29,7 @@ body {
 ```
 // Input
 h1 {
-    font-family: getFont( primary, display );
+    font-family: get-font( primary, display );
 }
 
 // Output
