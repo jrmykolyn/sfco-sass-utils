@@ -11,6 +11,7 @@
   color: #FF0000;
   color: #ffff00;
   color: #800080;
+  font-family: "Times New Roman", serif;
   font-family: "Helvetica", "Arial", sans-serif;
   display: block;
   overflow: hidden;
@@ -46,6 +47,7 @@
  */
 .test--functions--get-path {
   background-image: url(./assets/images/icon--share.png);
+  background-image: url(./assets/images/placeholder);
 }
 /*!
  * If test is successful, rule(s) below should include styles for:

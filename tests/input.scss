@@ -26,6 +26,7 @@
     color: getColor( red );
     color: get-color( yellow, primary );
     color: get-color( purple, secondary );
+    font-family: getFont( copy );
     font-family: get-font( primary, display );
     display: get( $demoMap, display );
     overflow: get( $demoMap, overflow, hidden );
@@ -38,7 +39,7 @@
  * - height: 400px;
  */
 .test--functions--apply-aspect {
-    width: apply-aspect( 3 4 );
+    width: applyAspect( 3 4 );
     height: apply-aspect( 2 3, 600px );
 }
 
@@ -49,7 +50,7 @@
  */
 .test--functions:before,
 .test--functions::before {
-    content: "1200 is #{get-aspect( 1200 800 )} times larger than 800."
+    content: "1200 is #{getAspect( 1200 800 )} times larger than 800."
 }
 
 
@@ -68,7 +69,8 @@
  * - background-image: ...;
  */
 .test--functions--get-path {
-    background-image: url(#{get-path( images )}/icon--share.png);
+    background-image: url(#{getPath( images )}/icon--share.png);
+    background-image: url(#{get-path( images, placeholder )});
 }
 
 
