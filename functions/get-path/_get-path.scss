@@ -5,7 +5,7 @@
 
 TODO[@jrmykolyn] - Add description for `getPath()`.
 
-- @param {String} `$pathName`
+- @param {String} `$path-name`
 - @param {String} `$set`
 - @param {String}
 
@@ -27,17 +27,34 @@ TODO[@jrmykolyn] - Add description for `getPath()`.
 // which in turn has a key called `images` set to a value of `./assets/images`.
 ```
 */
-@function getPath( $pathName: null, $set: default ) {
-    @if ( global-variable-exists( pathMap ) == false ) {
-        @error 'Whoops! Please ensure that the `$pathMap` variable exists.';
+@function get-path( $path-name, $set: default ) {
+    @return getPath( $path-name, $set );
+}
+
+@function getPath( $path-name: null, $set: default ) {
+    $target: null;
+    $paths: null;
+
+    // Validate existence of 'path map' or error.
+    @if ( global-variable-exists( pathMap ) ) {
+        $target: $pathMap;
+    } @else if ( global-variable-exists( path-map ) ) {
+        $target: $path-map;
+    } @else {
+        @error 'Whoops! Please ensure that either of the following variables exist: `$pathMap`; `$path-map`.';
     }
 
-    @if ( map-has-key( $pathMap, $set ) == false ) {
-        @error 'Please ensure that the `#{$set}` key exists on $pathMap, and is a list.';
+    // Get target submap or error.
+    @if ( map-has-key( $target, $set ) ) {
+        $paths: map-get( $target, $set );
+    } @else {
+        @error 'Please ensure that the `#{$set}` key exists, and is a list.';
     }
 
-    $pathSet: map-get( $pathMap, $set );
-    $path: map-get( $pathSet, $pathName );
-
-    @return $path;
+    // Return requested path or error.
+    @if ( map-get( $paths, $path-name ) ) {
+        @return map-get( $paths, $path-name );
+    } @else {
+        @error 'Map `#{$set}` does not include key `#{$path-name}`.';
+    }
 }

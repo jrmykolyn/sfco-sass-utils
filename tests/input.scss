@@ -68,7 +68,7 @@
  * - background-image: ...;
  */
 .test--functions--get-path {
-    background-image: url(#{getPath( images )}/icon--share.png);
+    background-image: url(#{get-path( images )}/icon--share.png);
 }
 
 
