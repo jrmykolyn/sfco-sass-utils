@@ -5,8 +5,8 @@
 
 Function fetches the specified font from a 'set' of fonts, defined on $fontMap.
 
-- @param {String} `$fontName` - *The font to fetch.*
-- @param {String} `$set` - *The set/group of fonts which contains `$fontName`.*
+- @param {String} `$font-name` - *The font to fetch.*
+- @param {String} `$set` - *The set/group of fonts which contains `$font-name`.*
 - @return {String}
 
 ### Usage
@@ -42,17 +42,34 @@ h1 {
 // which in turn has a key called 'primary' set to a value of "'Helvetica', 'Arial', serif".
 ```
 */
-@function getFont( $fontName, $set: default ) {
-    @if ( global-variable-exists( fontMap ) == false ) {
-        @error 'Whoops! Please ensure that the `$fontMap` variable exists.';
+@function get-font( $font-name, $set: default ) {
+    @return getFont( $font-name, $set );
+}
+
+@function getFont( $font-name, $set: default ) {
+    $target: null;
+    $fonts: null;
+
+    // Validate existence of 'font map' or error.
+    @if ( global-variable-exists( fontMap ) ) {
+        $target: $fontMap;
+    } @else if ( global-variable-exists( font-map ) ) {
+      $target: $font-map;
+    } @else {
+        @error 'Whoops! Please ensure that either of the following variables exist: `$fontMap`; `$font-map`.';
     }
 
-    @if ( map-has-key( $fontMap, $set ) == false ) {
-        @error 'Please ensure that the `#{$set}` key exists on $fontMap, and is a list.';
+    // Get target submap or error.
+    @if ( map-has-key( $target, $set ) ) {
+        $fonts: map-get( $target, $set );
+    } @else {
+        @error 'Please ensure that the `#{$set}` key exists, and is a list.';
     }
 
-    $fontSet: map-get( $fontMap, $set );
-    $font: map-get( $fontSet, $fontName );
-
-    @return $font;
+    // Return requested font or error.
+    @if ( map-has-key( $fonts, $font-name ) ) {
+        @return map-get( $fonts, $font-name );
+    } @else {
+        @error 'Map `#{$set}` does not include key `#{$font-name}`.';
+    }
 }
