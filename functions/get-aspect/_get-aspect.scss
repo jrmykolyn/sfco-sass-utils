@@ -6,7 +6,7 @@
 Given a set of 2x numbers (`$dims`), function returns their relationship as either an integer or floating point number.
 
 - @param {String} `$dims` - Space-delimited set of dimensions. Function expects the *first number* to be the *width*, *second* to be the *height*.
-- @param {Boolean} `$returnHeightVal` - If set to `false`, function will return HEIGHT/WIDTH. Argument is set to `true` by default.
+- @param {Boolean} `$return-height-val` - If set to `false`, function will return HEIGHT/WIDTH. Argument is set to `true` by default.
 - @return {Number}
 
 ### Usage
@@ -35,12 +35,16 @@ span:before {
 }
 ```
 */
-@function getAspect( $dims, $returnHeightVal: true ) {
+@function get-aspect( $dims, $return-height-val: true ) {
+    @return getAspect( $dims, $return-height-val );
+}
+
+@function getAspect( $dims, $return-height-val: true ) {
     @if ( length( $dims ) != 2 ) {
         @error 'Please ensure that `$dims` argument contains 2x values.';
     }
 
-    @if ( $returnHeightVal == true ) {
+    @if ( $return-height-val == true ) {
         @return ( nth( $dims, 1 ) / nth( $dims, 2 ) );
     } @else {
         @return ( nth( $dims, 2 ) / nth( $dims, 1 ) );

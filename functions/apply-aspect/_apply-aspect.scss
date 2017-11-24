@@ -24,10 +24,14 @@ div {
 }
 ```
 */
+@function apply-aspect( $dims, $value: 100% ) {
+    @return applyAspect( $dims, $value );
+}
+
 @function applyAspect( $dims, $value: 100% ) {
     @if ( length( $dims ) != 2 ) {
         @error 'Please ensure that `$dims` argument contains 2x values.';
     }
 
-    @return getAspect( $dims )*$value;
+    @return get-aspect( $dims )*$value;
 }
