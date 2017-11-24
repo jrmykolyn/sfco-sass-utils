@@ -9,7 +9,7 @@ If the list argument contains 1x item: both properties will be set to the provid
 
 If the list arguments contains 2x or more items: `max-width` will be set equal to the first value; `max-height` will be set equal to the second value
 
-- @param {String} `$minDims` - A list of values
+- @param {String} `$min-dims` - A list of values
 
 ### Usage
 ```
@@ -37,16 +37,16 @@ div {
 }
 ```
 */
-@mixin min-size( $minDims: null ) {
-    @if ( $minDims == null ) {
+@mixin min-size( $min-dims: null ) {
+    @if ( $min-dims == null ) {
         @error 'Whoops! `min-size` requires at least 1x *non-null* argument.';
     }
 
-    @if ( length( $minDims ) == 1 ) {
-        min-width: $minDims;
-        min-height: $minDims;
+    @if ( length( $min-dims ) == 1 ) {
+        min-width: $min-dims;
+        min-height: $min-dims;
     } @else {
-        min-width: nth( $minDims, 1 );
-        min-height: nth( $minDims, 2 );
+        min-width: nth( $min-dims, 1 );
+        min-height: nth( $min-dims, 2 );
     }
 }

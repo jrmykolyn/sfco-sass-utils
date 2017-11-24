@@ -31,10 +31,10 @@ div::before {
 ```
 */
 @mixin pseudo( $elements ) {
-    $validPseudoElements: before after;
+    $valid-pseod-elements: before after;
 
     @each $element in $elements {
-        @if index( $validPseudoElements, $element ) {
+        @if index( $valid-pseod-elements, $element ) {
             &#{'::'}#{$element} {
                 @content;
             }

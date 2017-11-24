@@ -35,10 +35,10 @@ a:active {
 ```
 */
 @mixin on( $states ) {
-    $validStates: hover focus active visited;
+    $valid-states: hover focus active visited;
 
     @each $state in $states {
-        @if index( $validStates, $state ) {
+        @if index( $valid-states, $state ) {
             &:#{$state} {
                 @content;
             }

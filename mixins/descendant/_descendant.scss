@@ -28,10 +28,10 @@ section > *:last-child, {
 ```
 */
 @mixin descendant( $descendants ) {
-    $validDescendants: first last;
+    $valid-descendants: first last;
 
     @each $descendant in $descendants {
-        @if index( $validDescendants, $descendant ) {
+        @if index( $valid-descendants, $descendant ) {
             & > *:#{$descendant}-child {
                 @content;
             }
