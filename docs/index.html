@@ -10,7 +10,7 @@
     <nav class="psg-menu">
       <h1 class="psg-projectName">SF Co. SASS Utils</h1>
       
-      <p class="psg-updatedTime">Last updated on: <time>Nov 24, 2017 at 09:15</time></p>
+      <p class="psg-updatedTime">Last updated on: <time>Nov 27, 2017 at 09:00</time></p>
       <ul class="psg-componentList">
         
         
@@ -155,7 +155,7 @@
 <h3 id="usage">Usage</h3>
 <pre><code>// Input
 div {
-    display: get( <span class="hljs-variable">$demoMap</span>, display );
+    display: get( <span class="hljs-variable">$demo-map</span>, display );
 }
 
 // Output
@@ -165,10 +165,10 @@ div {
 
 
 // NOTE:
-// Example above assumes that `<span class="hljs-variable">$demoMap</span>` incudes a key <span class="hljs-keyword">of</span> <span class="hljs-string">'display'</span>, which <span class="hljs-keyword">in</span> turn holds a <span class="hljs-keyword">value</span> <span class="hljs-keyword">of</span> <span class="hljs-string">'block'</span>.
+// Example above assumes that `<span class="hljs-variable">$demo-map</span>` incudes a key <span class="hljs-keyword">of</span> <span class="hljs-string">'display'</span>, which <span class="hljs-keyword">in</span> turn holds a <span class="hljs-keyword">value</span> <span class="hljs-keyword">of</span> <span class="hljs-string">'block'</span>.
 </code></pre><pre><code>// Input
 div {
-    overflow: get( <span class="hljs-variable">$demoMap</span>, overflow, hidden );
+    overflow: get( <span class="hljs-variable">$demo-map</span>, overflow, hidden );
 }
 
 // Output
@@ -178,7 +178,7 @@ div {
 
 
 // NOTE:
-// Example above assumes that `<span class="hljs-variable">$demoMap</span>` DOES NOT include a key <span class="hljs-keyword">of</span> <span class="hljs-string">'display'</span>. In this <span class="hljs-keyword">case</span>, the fallback <span class="hljs-keyword">value</span> (<span class="hljs-string">'hidden'</span>) is returned.
+// Example above assumes that `<span class="hljs-variable">$demo-map</span>` DOES NOT include a key <span class="hljs-keyword">of</span> <span class="hljs-string">'display'</span>. In this <span class="hljs-keyword">case</span>, the fallback <span class="hljs-keyword">value</span> (<span class="hljs-string">'hidden'</span>) is returned.
 </code></pre>
               </div>
               <div class="psg-contents-rule">
@@ -193,10 +193,11 @@ div {
             <div class="psg-contents">
               <div class="psg-contents-html">
                 <p>Function fetches the specified color from a &#39;set&#39; of colors, defined on $color-map.</p>
-<p>NOTE: This function may also be invoked as <code>getColor()</code></p>
+<p>NOTE: This function may also be invoked as <code>getColor()</code>.
+NOTE: This function may also be used to fetch data from <code>$colorMap</code>.</p>
 <ul>
 <li>@param {String} <code>$color-name</code> - <em>The color to fetch.</em></li>
-<li>@param {String} <code>$color-set</code> - <em>The set/group of colors which contains <code>$color-name</code>.</em></li>
+<li>@param {String} <code>$submap</code> - <em>The set/group of colors which contains <code>$color-name</code>.</em></li>
 <li>@return {String}</li>
 </ul>
 <h3 id="usage">Usage</h3>
@@ -224,7 +225,7 @@ div {
 }
 
 <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span></span>
-<span class="hljs-comment">// Example above assumes that $color-map includes the $color-set 'placeholder',</span>
+<span class="hljs-comment">// Example above assumes that $color-map includes the $submap 'placeholder',</span>
 <span class="hljs-comment">// which in turn has a key called 'base' set to value of #FAFAFA.</span>
 </code></pre>
               </div>
@@ -239,11 +240,12 @@ div {
             <h2 id="psg-link-2" class="psg-componentTitle">get-font (@function)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
-                <p>Function fetches the specified font from a &#39;set&#39; of fonts, defined on $fontMap.</p>
-<p>NOTE: This function may also be invoked as <code>getFont()</code></p>
+                <p>Function fetches the specified font from a &#39;set&#39; of fonts, defined on <code>$font-map</code>.</p>
+<p>NOTE: This function may also be invoked as <code>getFont()</code>.
+NOTE: This function may also be used to fetch data from <code>$fontMap</code>.</p>
 <ul>
 <li>@param {String} <code>$font-name</code> - <em>The font to fetch.</em></li>
-<li>@param {String} <code>$set</code> - <em>The set/group of fonts which contains <code>$font-name</code>.</em></li>
+<li>@param {String} <code>$submap</code> - <em>The set/group of fonts which contains <code>$font-name</code>.</em></li>
 <li>@return {String}</li>
 </ul>
 <h3 id="usage">Usage</h3>
@@ -259,7 +261,7 @@ body {
 
 
 // NOTE:
-// Example above assumes that <span class="hljs-variable">$fontMap</span> includes the <span class="hljs-variable">$set</span> <span class="hljs-string">'default'</span>,
+// Example above assumes that <span class="hljs-variable">$font-map</span> includes the <span class="hljs-variable">$submap</span> <span class="hljs-string">'default'</span>,
 // which <span class="hljs-keyword">in</span> turn has a key called <span class="hljs-string">'copy'</span> set <span class="hljs-keyword">to</span> a <span class="hljs-keyword">value</span> <span class="hljs-keyword">of</span> <span class="hljs-string">"'Times New Roman', serif"</span>.
 </code></pre><pre><code>// Input
 h1 {
@@ -272,7 +274,7 @@ h1 {
 }
 
 // NOTE:
-// Example above assumes that <span class="hljs-variable">$fontMap</span> includes the <span class="hljs-variable">$set</span> <span class="hljs-string">'display'</span>,
+// Example above assumes that <span class="hljs-variable">$font-map</span> includes the <span class="hljs-variable">$submap</span> <span class="hljs-string">'display'</span>,
 // which <span class="hljs-keyword">in</span> turn has a key called <span class="hljs-string">'primary'</span> set <span class="hljs-keyword">to</span> a <span class="hljs-keyword">value</span> <span class="hljs-keyword">of</span> <span class="hljs-string">"'Helvetica', 'Arial', serif"</span>.
 </code></pre>
               </div>
@@ -287,11 +289,12 @@ h1 {
             <h2 id="psg-link-3" class="psg-componentTitle">get-path (@function)</h2>
             <div class="psg-contents">
               <div class="psg-contents-html">
-                <p>TODO[@jrmykolyn] - Add description for <code>get-path()</code>.</p>
-<p>NOTE: This function may also be invoked as <code>getPath()</code></p>
+                <p>Function fetches the specified path from a &#39;set&#39; of paths, defined on $path-map.</p>
+<p>NOTE: This function may also be invoked as <code>getPath()</code>.
+NOTE: This function may also be used to fetch data from <code>$pathMap</code>.</p>
 <ul>
 <li>@param {String} <code>$path-name</code></li>
-<li>@param {String} <code>$set</code></li>
+<li>@param {String} <code>$submap</code></li>
 <li>@return {String}</li>
 </ul>
 <h3 id="usage">Usage</h3>
@@ -307,7 +310,7 @@ h1 {
 
 
 // NOTE:
-// Example above assumes that <span class="hljs-variable">$pathMap</span> includes the <span class="hljs-variable">$set</span> <span class="hljs-string">'default'</span>,
+// Example above assumes that <span class="hljs-variable">$path-map</span> includes the <span class="hljs-variable">$submap</span> <span class="hljs-string">'default'</span>,
 // which <span class="hljs-keyword">in</span> turn has a key called `images` set <span class="hljs-keyword">to</span> a <span class="hljs-keyword">value</span> <span class="hljs-keyword">of</span> `./assets/images`.
 </code></pre>
               </div>
@@ -687,7 +690,7 @@ If the mixin is called with 2x arguments, the second value will be appended to t
 <h3 id="usage">Usage</h3>
 <pre><code><span class="hljs-comment">// Input</span>
 <span class="hljs-tag">p</span> {
-    <span class="hljs-variable">@include</span> <span class="hljs-function">print-map</span>( $fontStylesMap );
+    <span class="hljs-variable">@include</span> <span class="hljs-function">print-map</span>( $font-styles-map );
 }
 
 <span class="hljs-comment">// Output</span>
@@ -699,7 +702,7 @@ If the mixin is called with 2x arguments, the second value will be appended to t
 
 
 <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span></span>
-<span class="hljs-comment">// Example above assumes that $fontStylesMap includes the following keys: `font-size`; `font-weight`; `text-transform`.</span>
+<span class="hljs-comment">// Example above assumes that $font-styles-map includes the following keys: `font-size`; `font-weight`; `text-transform`.</span>
 </code></pre>
               </div>
               <div class="psg-contents-rule">
