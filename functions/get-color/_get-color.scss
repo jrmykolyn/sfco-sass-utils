@@ -8,7 +8,7 @@ Function fetches the specified color from a 'set' of colors, defined on $color-m
 NOTE: This function may also be invoked as `getColor()`
 
 - @param {String} `$color-name` - *The color to fetch.*
-- @param {String} `$color-set` - *The set/group of colors which contains `$color-name`.*
+- @param {String} `$submap` - *The set/group of colors which contains `$color-name`.*
 - @return {String}
 
 ### Usage
@@ -39,15 +39,15 @@ h1 {
 }
 
 // NOTE:
-// Example above assumes that $color-map includes the $color-set 'placeholder',
+// Example above assumes that $color-map includes the $submap 'placeholder',
 // which in turn has a key called 'base' set to value of #FAFAFA.
 ```
 */
-@function get-color( $color-name, $color-set: default ) {
-    @return getColor( $color-name, $color-set );
+@function get-color( $color-name, $submap: default ) {
+    @return getColor( $color-name, $submap );
 }
 
-@function getColor( $color-name, $color-set: default ) {
+@function getColor( $color-name, $submap: default ) {
     $target: null;
     $colors: null;
 
@@ -61,24 +61,24 @@ h1 {
     }
 
     // Grab target submap or error.
-    @if map-has-key( $target, $color-set ) {
-        $colors: map-get( $target, $color-set );
+    @if map-has-key( $target, $submap ) {
+        $colors: map-get( $target, $submap );
     // NOTE: Coerce argument and display warning if:
     // - Function invoked with 'default'.
     // - Author's color map DOES NOT contain 'default'.
     // - Author's color map DOES contain 'base'.
     /// TODO: Remove warning/throw error as part of next major release.
-    } @else if $color-set == 'default' and map-has-key( $target, 'base' ) {
+    } @else if $submap == 'default' and map-has-key( $target, 'base' ) {
         @warn 'Color map contains a legacy default key: "base". Change the "base" key to "default" in order to continue invoking `get-color()` without a second argument. Currently, "base" is coerced to "default" at compile time. This behavior will be removed as part of the next major release.';
         $colors: map-get( $target, 'base' );
     } @else {
-        @error 'Please ensure that the `#{$color-set}` key exists, and is a list.';
+        @error 'Please ensure that the `#{$submap}` key exists, and is a list.';
     }
 
     // Return requested color or error.
     @if map-has-key( $colors, $color-name ) {
         @return map-get( $colors, $color-name );
     } @else {
-        @error 'Map `#{$color-set}` does not include key `#{$color-name}`.';
+        @error 'Map `#{$submap}` does not include key `#{$color-name}`.';
     }
 }

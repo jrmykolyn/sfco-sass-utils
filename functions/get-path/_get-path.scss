@@ -8,7 +8,7 @@ TODO[@jrmykolyn] - Add description for `get-path()`.
 NOTE: This function may also be invoked as `getPath()`
 
 - @param {String} `$path-name`
-- @param {String} `$set`
+- @param {String} `$submap`
 - @return {String}
 
 ### Usage
@@ -25,15 +25,15 @@ NOTE: This function may also be invoked as `getPath()`
 
 
 // NOTE:
-// Example above assumes that $pathMap includes the $set 'default',
+// Example above assumes that $pathMap includes the $submap 'default',
 // which in turn has a key called `images` set to a value of `./assets/images`.
 ```
 */
-@function get-path( $path-name, $set: default ) {
-    @return getPath( $path-name, $set );
+@function get-path( $path-name, $submap: default ) {
+    @return getPath( $path-name, $submap );
 }
 
-@function getPath( $path-name: null, $set: default ) {
+@function getPath( $path-name: null, $submap: default ) {
     $target: null;
     $paths: null;
 
@@ -47,16 +47,16 @@ NOTE: This function may also be invoked as `getPath()`
     }
 
     // Get target submap or error.
-    @if ( map-has-key( $target, $set ) ) {
-        $paths: map-get( $target, $set );
+    @if ( map-has-key( $target, $submap ) ) {
+        $paths: map-get( $target, $submap );
     } @else {
-        @error 'Please ensure that the `#{$set}` key exists, and is a list.';
+        @error 'Please ensure that the `#{$submap}` key exists, and is a list.';
     }
 
     // Return requested path or error.
     @if ( map-get( $paths, $path-name ) ) {
         @return map-get( $paths, $path-name );
     } @else {
-        @error 'Map `#{$set}` does not include key `#{$path-name}`.';
+        @error 'Map `#{$submap}` does not include key `#{$path-name}`.';
     }
 }
