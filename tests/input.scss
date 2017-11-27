@@ -28,8 +28,8 @@
     color: get-color( purple, secondary );
     font-family: getFont( copy );
     font-family: get-font( primary, display );
-    display: get( $demoMap, display );
-    overflow: get( $demoMap, overflow, hidden );
+    display: get( $demo-map, display );
+    overflow: get( $demo-map, overflow, hidden );
 }
 
 
@@ -170,7 +170,7 @@
  * - text-transform;
  */
 .test--mixins--print-map {
-    @include print-map( $fontStylesMap );
+    @include print-map( $font-styles-map );
 }
 
 

@@ -14,7 +14,7 @@ Function is a wrapper around the native SASS `map-get` function.
 ```
 // Input
 div {
-    display: get( $demoMap, display );
+    display: get( $demo-map, display );
 }
 
 // Output
@@ -24,12 +24,12 @@ div {
 
 
 // NOTE:
-// Example above assumes that `$demoMap` incudes a key of 'display', which in turn holds a value of 'block'.
+// Example above assumes that `$demo-map` incudes a key of 'display', which in turn holds a value of 'block'.
 ```
 ```
 // Input
 div {
-    overflow: get( $demoMap, overflow, hidden );
+    overflow: get( $demo-map, overflow, hidden );
 }
 
 // Output
@@ -39,7 +39,7 @@ div {
 
 
 // NOTE:
-// Example above assumes that `$demoMap` DOES NOT include a key of 'display'. In this case, the fallback value ('hidden') is returned.
+// Example above assumes that `$demo-map` DOES NOT include a key of 'display'. In this case, the fallback value ('hidden') is returned.
 ```
 */
 @function get( $map, $key, $fallback: '' ) {

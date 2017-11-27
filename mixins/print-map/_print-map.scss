@@ -11,7 +11,7 @@ Given a map, mixin prints 1x declaration for every key/value pair. NOTE: Mixin D
 ```
 // Input
 p {
-    @include print-map( $fontStylesMap );
+    @include print-map( $font-styles-map );
 }
 
 // Output
@@ -23,7 +23,7 @@ p {
 
 
 // NOTE:
-// Example above assumes that $fontStylesMap includes the following keys: `font-size`; `font-weight`; `text-transform`.
+// Example above assumes that $font-styles-map includes the following keys: `font-size`; `font-weight`; `text-transform`.
 ```
 */
 @mixin print-map( $map ) {
