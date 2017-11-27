@@ -1,15 +1,12 @@
-/// TODO[@jrmykolyn] - Add comments to the variable declarations below.
-
 /**
- * ...
+ * `$demo-map` is used by the `sfco-sass-utils` tests.
  */
 $demo-map: (
     display: block
 );
 
-
 /**
- * ...
+ * `$color-map` is used by the `get-color`/`getColor` function.
  *
  * NOTE: Legacy `$colorMap` is also supported.
  */
@@ -29,9 +26,10 @@ $color-map: (
     ),
 );
 
-
 /**
- * ...
+ * `$font-map` is used by the `get-font`/`getFont` function.
+ *
+ * NOTE: Legacy `$fontMap` is also supported.
  */
 $font-map: (
     default: (
@@ -43,9 +41,10 @@ $font-map: (
     )
 );
 
-
 /**
- * ...
+ * `$path-map` is used by the `get-path`/`getPath` function.
+ *
+ * NOTE: Legacy `$pathMap` is also supported.
  */
 $path-map: (
     default: (
@@ -56,9 +55,8 @@ $path-map: (
     )
 );
 
-
 /**
- * ...
+ * `$demo-map` is used by the `sfco-sass-utils` tests.
  */
 $font-styles-map: (
     font-size: 1.4rem,
