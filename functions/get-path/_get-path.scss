@@ -3,9 +3,10 @@
 
 @title get-path (@function)
 
-TODO[@jrmykolyn] - Add description for `get-path()`.
+Function fetches the specified path from a 'set' of paths, defined on $path-map.
 
-NOTE: This function may also be invoked as `getPath()`
+NOTE: This function may also be invoked as `getPath()`.
+NOTE: This function may also be used to fetch data from `$pathMap`.
 
 - @param {String} `$path-name`
 - @param {String} `$submap`
@@ -25,7 +26,7 @@ NOTE: This function may also be invoked as `getPath()`
 
 
 // NOTE:
-// Example above assumes that $pathMap includes the $submap 'default',
+// Example above assumes that $path-map includes the $submap 'default',
 // which in turn has a key called `images` set to a value of `./assets/images`.
 ```
 */
