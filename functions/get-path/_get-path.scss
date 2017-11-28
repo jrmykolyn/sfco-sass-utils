@@ -1,35 +1,31 @@
-/*
-@styleguide
-
-@title get-path (@function)
-
-Function fetches the specified path from a 'set' of paths, defined on $path-map.
-
-NOTE: This function may also be invoked as `getPath()`.
-NOTE: This function may also be used to fetch data from `$pathMap`.
-
-- @param {String} `$path-name`
-- @param {String} `$submap`
-- @return {String}
-
-### Usage
-```
-// Input
-.icon--share {
-    background-image: url(#{get-path( images )}/icon--share.png);
-}
-
-// Output
-.icon--share {
-    background-image: url(./assets/images/icon--share.png);
-}
-
-
-// NOTE:
-// Example above assumes that $path-map includes the $submap 'default',
-// which in turn has a key called `images` set to a value of `./assets/images`.
-```
-*/
+// get-path(path-name, $submap)
+//
+// Function fetches the specified path from a 'set' of paths, defined on $path-map. This function may also be invoked as `getPath()`.
+//
+// NOTE: This function may also be used to fetch data from `$pathMap`.
+//
+// **Usage**
+// ```
+// // Input
+// .icon--share {
+//     background-image: url(#{get-path( images )}/icon--share.png);
+// }
+//
+// // Output
+// .icon--share {
+//     background-image: url(./assets/images/icon--share.png);
+// }
+//
+//
+// // NOTE:
+// // Example above assumes that $path-map includes the $submap 'default',
+// // which in turn has a key called `images` set to a value of `./assets/images`.
+// ```
+//
+// $path-name
+// $submap` = default
+//
+// Style guide: functions.get-path
 @function get-path( $path-name, $submap: default ) {
     @return getPath( $path-name, $submap );
 }

@@ -1,49 +1,45 @@
-/*
-@styleguide
-
-@title get-color (@function)
-
-Function fetches the specified color from a 'set' of colors, defined on $color-map.
-
-NOTE: This function may also be invoked as `getColor()`.
-NOTE: This function may also be used to fetch data from `$colorMap`.
-
-- @param {String} `$color-name` - *The color to fetch.*
-- @param {String} `$submap` - *The set/group of colors which contains `$color-name`.*
-- @return {String}
-
-### Usage
-```
-// Input
-p {
-    color: get-color( black );
-}
-
-// Output
-p {
-    color: #000;
-}
-
-
-// NOTE:
-// Example above assumes that $color-map includes the key 'black', set to a value of #000.
-```
-```
-// Input
-h1 {
-    background-color: get-color( base, placeholder );
-}
-
-// Output
-h1 {
-    background-color: #FAFAFA;
-}
-
-// NOTE:
-// Example above assumes that $color-map includes the $submap 'placeholder',
-// which in turn has a key called 'base' set to value of #FAFAFA.
-```
-*/
+// get-color($color-name, $submap)
+//
+// Function fetches the specified color from a 'set' of colors, defined on $color-map. This function may also be invoked as `getColor()`.
+//
+// NOTE: This function may also be used to fetch data from `$colorMap`.
+//
+// **Usage**
+// ```
+// // Input
+// p {
+//     color: get-color( black );
+// }
+//
+// // Output
+// p {
+//     color: #000;
+// }
+//
+//
+// // NOTE:
+// // Example above assumes that $color-map includes the key 'black', set to a value of #000.
+// ```
+// ```
+// // Input
+// h1 {
+//     background-color: get-color( base, placeholder );
+// }
+//
+// // Output
+// h1 {
+//     background-color: #FAFAFA;
+// }
+//
+// // NOTE:
+// // Example above assumes that $color-map includes the $submap 'placeholder',
+// // which in turn has a key called 'base' set to value of #FAFAFA.
+// ```
+//
+// $color-name - *The color to fetch.*
+// $submap = default - *The set/group of colors which contains `$color-name`.*
+//
+// Style guide: functions.get-color
 @function get-color( $color-name, $submap: default ) {
     @return getColor( $color-name, $submap );
 }

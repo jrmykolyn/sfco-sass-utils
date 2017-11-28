@@ -1,47 +1,44 @@
-/*
-@styleguide
-
-@title get (@function)
-
-Function is a wrapper around the native SASS `map-get` function.
-
-- @param {String} `$map` - *Target SASS map.*
-- @param {String} `$key` - *Target map key.*
-- @param {String} `$fallback` - *Value to return if target key does not yield a value.*
-- @return {Mixed}
-
-### Usage
-```
-// Input
-div {
-    display: get( $demo-map, display );
-}
-
-// Output
-div {
-    display: block;
-}
-
-
-// NOTE:
-// Example above assumes that `$demo-map` incudes a key of 'display', which in turn holds a value of 'block'.
-```
-```
-// Input
-div {
-    overflow: get( $demo-map, overflow, hidden );
-}
-
-// Output
-div {
-    overflow: hidden;
-}
-
-
-// NOTE:
-// Example above assumes that `$demo-map` DOES NOT include a key of 'display'. In this case, the fallback value ('hidden') is returned.
-```
-*/
+// get(@map, $key, $fallback)
+//
+// Function is a wrapper around the native SASS `map-get` function.
+//
+// **Usage**
+// ```
+// // Input
+// div {
+//     display: get( $demo-map, display );
+// }
+//
+// // Output
+// div {
+//     display: block;
+// }
+//
+//
+// // NOTE:
+// // Example above assumes that `$demo-map` incudes a key of 'display', which in turn holds a value of 'block'.
+// ```
+// ```
+// // Input
+// div {
+//     overflow: get( $demo-map, overflow, hidden );
+// }
+//
+// // Output
+// div {
+//     overflow: hidden;
+// }
+//
+//
+// // NOTE:
+// // Example above assumes that `$demo-map` DOES NOT include a key of 'display'. In this case, the fallback value ('hidden') is returned.
+// ```
+//
+// $map - *Target SASS map.*
+// $key - *Target map key.*
+// $fallback - *Value to return if target key does not yield a value.*
+//
+// Style guide: functions.get
 @function get( $map, $key, $fallback: '' ) {
     @if ( $map and map-has-key( $map, $key ) ) {
         @return map-get( $map, $key );

@@ -1,50 +1,46 @@
-/*
-@styleguide
-
-@title get-font (@function)
-
-Function fetches the specified font from a 'set' of fonts, defined on `$font-map`.
-
-NOTE: This function may also be invoked as `getFont()`.
-NOTE: This function may also be used to fetch data from `$fontMap`.
-
-- @param {String} `$font-name` - *The font to fetch.*
-- @param {String} `$submap` - *The set/group of fonts which contains `$font-name`.*
-- @return {String}
-
-### Usage
-```
-// Input
-body {
-    font-family: get-font( copy );
-}
-
-// Output
-body {
-    font-family: "Times New Roman", serif;
-}
-
-
-// NOTE:
-// Example above assumes that $font-map includes the $submap 'default',
-// which in turn has a key called 'copy' set to a value of "'Times New Roman', serif".
-```
-```
-// Input
-h1 {
-    font-family: get-font( primary, display );
-}
-
-// Output
-h1 {
-    font-family: "Helvetica", "Arial", sans-serif;
-}
-
-// NOTE:
-// Example above assumes that $font-map includes the $submap 'display',
-// which in turn has a key called 'primary' set to a value of "'Helvetica', 'Arial', serif".
-```
-*/
+// get-font($font-name, $submap)
+//
+// Function fetches the specified font from a 'set' of fonts, defined on `$font-map`. This function may also be invoked as `getFont()`.
+//
+// NOTE: This function may also be used to fetch data from `$fontMap`.
+//
+// **Usage**
+// ```
+// // Input
+// body {
+//     font-family: get-font( copy );
+// }
+//
+// // Output
+// body {
+//     font-family: "Times New Roman", serif;
+// }
+//
+//
+// // NOTE:
+// // Example above assumes that $font-map includes the $submap 'default',
+// // which in turn has a key called 'copy' set to a value of "'Times New Roman', serif".
+// ```
+// ```
+// // Input
+// h1 {
+//     font-family: get-font( primary, display );
+// }
+//
+// // Output
+// h1 {
+//     font-family: "Helvetica", "Arial", sans-serif;
+// }
+// 
+// // NOTE:
+// // Example above assumes that $font-map includes the $submap 'display',
+// // which in turn has a key called 'primary' set to a value of "'Helvetica', 'Arial', serif".
+// ```
+//
+// $font-name - *The font to fetch.*
+// $submap = default - *The set/group of fonts which contains `$font-name`.*
+//
+// Style guide: functions.get-font
 @function get-font( $font-name, $submap: default ) {
     @return getFont( $font-name, $submap );
 }

@@ -1,31 +1,26 @@
-/*
-@styleguide
-
-@title apply-aspect (@function)
-
-Given a set of 2x numbers (`$dims`) and a value (`$value`), function applies the aspect ratio to the value and returns the result.
-
-NOTE: This function may also be invoked as `applyAspect()`
-
-- @param {String} `$dims` - *Space-delimited set of dimensions. Function expects the first number to be the width, second to be the height.*
-- @param {String|Number} `$value` - *Value against which the aspect ratio will be applied. Defaults to '100%' if no argument is provided.*
-- @return {Number}
-
-### Usage
-```
-// Input
-div {
-    width: apply-aspect( 3 4 );
-    height: apply-aspect( 2 3, 600px );
-}
-
-// Output
-div {
-    width: 75%;
-    height: 400px;
-}
-```
-*/
+// apply-aspect($dims, $value)
+//
+// Given a set of 2x numbers (`$dims`) and a value (`$value`), function applies the aspect ratio to the value and returns the result. This function may also be invoked as `applyAspect()`
+//
+// **Usage**
+// ```
+// // Input
+// div {
+//     width: apply-aspect( 3 4 );
+//     height: apply-aspect( 2 3, 600px );
+// }
+//
+// // Output
+// div {
+//     width: 75%;
+//     height: 400px;
+// }
+// ```
+//
+// $dims  - Space-delimited set of dimensions. Function expects the first number to be the width, second to be the height.
+// $value = 100% - Value against which the aspect ratio will be applied. Defaults to '100%' if no argument is provided.
+//
+// Style guide: functions.apply-aspect
 @function apply-aspect( $dims, $value: 100% ) {
     @return applyAspect( $dims, $value );
 }

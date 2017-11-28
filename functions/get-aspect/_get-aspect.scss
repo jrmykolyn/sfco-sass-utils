@@ -1,42 +1,37 @@
-/*
-@styleguide
-
-@title get-aspect (@function)
-
-Given a set of 2x numbers (`$dims`), function returns their relationship as either an integer or floating point number.
-
-NOTE: This function may also be invoked as `getAspect()`
-
-- @param {String} `$dims` - Space-delimited set of dimensions. Function expects the *first number* to be the *width*, *second* to be the *height*.
-- @param {Boolean} `$return-height-val` - If set to `false`, function will return HEIGHT/WIDTH. Argument is set to `true` by default.
-- @return {Number}
-
-### Usage
-```
-// Input
-div {
-    width: 100%;
-    height: get-aspect( 16 9, false )*100%;
-}
-
-// Output
-div {
-    width: 100%;
-    height: 56.25%;
-}
-```
-```
-// Input
-span:before {
-    content: "500 is #{get-aspect( 500 200 )} times greater than 200."
-}
-
-// Output
-span:before {
-    content: "500 is 2.5 times greater than 200.";
-}
-```
-*/
+// get-aspect(@dims, $return-height-val)
+//
+// Given a set of 2x numbers (`$dims`), function returns their relationship as either an integer or floating point number. This function may also be invoked as `getAspect()`
+//
+// **Usage**
+// ```
+// // Input
+// div {
+//     width: 100%;
+//     height: get-aspect( 16 9, false )*100%;
+// }
+//
+// // Output
+// div {
+//     width: 100%;
+//     height: 56.25%;
+// }
+// ```
+// ```
+// // Input
+// span:before {
+//     content: "500 is #{get-aspect( 500 200 )} times greater than 200."
+// }
+//
+// // Output
+// span:before {
+//     content: "500 is 2.5 times greater than 200.";
+// }
+// ```
+//
+// $dims - Space-delimited set of dimensions. Function expects the *first number* to be the *width*, *second* to be the *height*.
+// $return-height-val = true - If set to `false`, function will return HEIGHT/WIDTH.
+//
+// Style guide: functions.get-aspect
 @function get-aspect( $dims, $return-height-val: true ) {
     @return getAspect( $dims, $return-height-val );
 }
