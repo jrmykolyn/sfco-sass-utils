@@ -14,9 +14,6 @@ var nano = require('cssnano');
 
 
 /* DECLARE VARS */
-var PROJECT = 'SF Co. SASS Utils';
-var INPUT = 'sfco-sass-utils.scss';
-
 var PATHS = {
     docs: {
         src: './',
@@ -39,33 +36,8 @@ var PATHS = {
  * - `tests`
  * - `docs`
  */
-gulp.task( 'default', [ 'tests', 'docs' ], function() {
+gulp.task( 'default', [ 'tests' ], function() {
     console.log( 'INSIDE TASK: `default`' );
-} );
-
-
-/**
- * ...
- */
-gulp.task( 'docs', function() {
-    return gulp.src( PATHS.docs.src + INPUT )
-        .pipe( sass( {
-            outputStyle: 'expanded' 
-            } )
-        )
-        .pipe( postcss( [
-            postCSSImport,
-            postCSSCustomProperties( { preserve: true } ),
-            autoprefixer,
-            postCSSStyleGuide( {
-                project: PROJECT,
-                dest: PATHS.docs.dest + '/index.html',
-                showCode: true,
-                theme: 'psg-theme-minimal',
-                themePath: './node_modules/psg-theme-minimal'
-            } ),
-            nano
-        ] ) );
 } );
 
 
