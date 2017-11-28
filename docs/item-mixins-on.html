@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="kss-assets/kss.css">
   
 </head>
-<body id="kss-node" >
+<body id="kss-node" class="kss-fullscreen-mode">
 
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
@@ -39,8 +39,65 @@
   </nav>
 </div>
 <article role="main" class="kss-main">
-    <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-      <h1 id="-todo">/// TODO</h1>
+
+    <div id="kssref-mixins-on" class="kss-section kss-section--depth-2 is-fullscreen">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-on">
+            <span class="kss-title__ref">
+              2.5
+              <span class="kss-title__permalink-hash">
+                  #mixins.on
+              </span>
+            </span>
+            on($states)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>For each valid &#39;state&#39; (eg. pseduo-selector) received via the <code>$states</code> argument,
+mixin wraps the provided <code>@content</code> declarations in a new CSS rule.
+Note that the mixin validates each &#39;state&#39; against an internally defined whitelist.</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+a {
+    @include on( hover ) { background: red; }
+}
+
+// Output
+a:hover {
+    background: red;
+}
+</code></pre><pre><code>// Input
+a {
+    @include on( focus active ) { margin-right: 10px; }
+}
+
+// Output
+a:focus,
+a:active {
+    margin-right: 10px;
+}
+</code></pre>
+          </div>
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$states</code></div>
+              <div class="kss-parameters__description">
+                The list of &#39;states&#39; for which to apply the provided styles.
+              </div>
+            </li>
+          </ul>
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/on/_on.scss</code>, line 1
+        </div>
 
     </div>
 </article>

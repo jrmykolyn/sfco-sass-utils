@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="kss-assets/kss.css">
   
 </head>
-<body id="kss-node" >
+<body id="kss-node" class="kss-fullscreen-mode">
 
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
@@ -39,8 +39,73 @@
   </nav>
 </div>
 <article role="main" class="kss-main">
-    <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-      <h1 id="-todo">/// TODO</h1>
+
+    <div id="kssref-mixins-parent" class="kss-section kss-section--depth-2 is-fullscreen">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-parent">
+            <span class="kss-title__ref">
+              2.6
+              <span class="kss-title__permalink-hash">
+                  #mixins.parent
+              </span>
+            </span>
+            parent ($type, $modifier)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Mixin allows for the building of rules based on the parent of the current selector.</p>
+<p>By default, including the <code>parent</code> mixin with no arguments will result in a new rule, with <code>* &gt;</code> prepended to the current selector.</p>
+<p>If the mixin is called with 1x argument, the &#39;*&#39; will be replaced with the value provided.</p>
+<p>If the mixin is called with 2x arguments, the second value will be appended to the first (eg. {TYPE}{MODIFIER}).</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+section {
+    @include parent {
+        background-color: grey;
+    }
+}
+
+// Output
+* &gt; section {
+    background-color: grey;
+}
+</code></pre><pre><code>// Input
+p {
+    @include parent( li ) {
+        text-decoration: underline;
+    }
+}
+
+// Output
+li &gt; p {
+    text-decoration: underline;
+}
+</code></pre><pre><code>// Input
+li {
+    @include parent( ul, &#39;.is-active&#39; ) {
+        font-weight: 700;
+    }
+}
+
+// Output
+ul.is-active li {
+    font-weight: 700;
+}
+</code></pre><p>$type = * -
+$modifier = &#39;&#39; -</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/parent/_parent.scss</code>, line 1
+        </div>
 
     </div>
 </article>

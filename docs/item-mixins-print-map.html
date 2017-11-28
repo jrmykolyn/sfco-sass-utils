@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="kss-assets/kss.css">
   
 </head>
-<body id="kss-node" >
+<body id="kss-node" class="kss-fullscreen-mode">
 
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
@@ -39,8 +39,51 @@
   </nav>
 </div>
 <article role="main" class="kss-main">
-    <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-      <h1 id="-todo">/// TODO</h1>
+
+    <div id="kssref-mixins-print-map" class="kss-section kss-section--depth-2 is-fullscreen">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-print-map">
+            <span class="kss-title__ref">
+              2.7
+              <span class="kss-title__permalink-hash">
+                  #mixins.print-map
+              </span>
+            </span>
+            print-map($map)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Given a map, mixin prints 1x declaration for every key/value pair. NOTE: Mixin DOES NOT support nested maps.</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+p {
+    @include print-map( $font-styles-map );
+}
+
+// Output
+p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+// NOTE:
+// Example above assumes that $font-styles-map includes the following keys: `font-size`; `font-weight`; `text-transform`.
+</code></pre><p>$map</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/print-map/_print-map.scss</code>, line 1
+        </div>
 
     </div>
 </article>

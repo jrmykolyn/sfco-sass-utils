@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>KSS Style Guide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  
+</head>
+<body id="kss-node" >
+
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+    <h1 class="kss-doc-title">KSS Style Guide</h1>
+  </header>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="./">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-functions.html">
+          <span class="kss-nav__ref">1</span><span class="kss-nav__name">functions</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-mixins.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">mixins</span>
+        </a>
+            <ul class="kss-nav__menu-child">
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-descendant">
+                  <span class="kss-nav__ref ">2.1</span
+                  ><span class="kss-nav__name">descendant($descendants)</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-dims">
+                  <span class="kss-nav__ref ">2.2</span
+                  ><span class="kss-nav__name">dims($dims)</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-max-size">
+                  <span class="kss-nav__ref ">2.3</span
+                  ><span class="kss-nav__name">max-size($max-dims)</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-min-size">
+                  <span class="kss-nav__ref ">2.4</span
+                  ><span class="kss-nav__name">min-size($min-dims)</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-on">
+                  <span class="kss-nav__ref ">2.5</span
+                  ><span class="kss-nav__name">on($states)</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-parent">
+                  <span class="kss-nav__ref ">2.6</span
+                  ><span class="kss-nav__name">parent ($type, $modifier)</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-print-map">
+                  <span class="kss-nav__ref ">2.7</span
+                  ><span class="kss-nav__name">print-map($map)</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-pseudo">
+                  <span class="kss-nav__ref ">2.8</span
+                  ><span class="kss-nav__name">pseudo($elements)</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-mixins.html#kssref-mixins-set">
+                  <span class="kss-nav__ref ">2.9</span
+                  ><span class="kss-nav__name">set($props, $value)</span>
+                </a>
+              </li>
+            </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+<article role="main" class="kss-main">
+
+    <div id="kssref-mixins" class="kss-section kss-section--depth-1 ">
+
+      <div class="kss-style">
+        <h1 class="kss-title kss-title--level-1">
+          <a class="kss-title__permalink" href="#kssref-mixins">
+            <span class="kss-title__ref">
+              2
+              <span class="kss-title__permalink-hash">
+                  #mixins
+              </span>
+            </span>
+            mixins
+          </a>
+        </h1>
+
+
+
+      </div>
+
+
+
+    </div>
+    <section id="kssref-mixins-descendant" class="kss-section kss-section--depth-2 ">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-descendant">
+            <span class="kss-title__ref">
+              2.1
+              <span class="kss-title__permalink-hash">
+                  #mixins.descendant
+              </span>
+            </span>
+            descendant($descendants)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>For each valid &#39;descendant keyword&#39; received via the <code>$descendants</code> argument,
+mixin wraps the provided <code>@content</code> declarations in a new CSS rule.
+Note that the mixin validates each &#39;descendant keyword&#39; against an internally defined whitelist.</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+section {
+    @include descendant( first last ) {
+        color: blue;
+        margin-bottom: 30px;
+    }
+}
+
+// Output
+section &gt; *:first-child,
+section &gt; *:last-child, {
+    color: blue;
+    margin-bottom: 30px;
+}
+</code></pre>
+          </div>
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$descendants</code></div>
+              <div class="kss-parameters__description">
+                Space delimited list of descendant keywords.
+              </div>
+            </li>
+          </ul>
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/descendant/_descendant.scss</code>, line 1
+        </div>
+
+    </section>
+    <section id="kssref-mixins-dims" class="kss-section kss-section--depth-2 ">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-dims">
+            <span class="kss-title__ref">
+              2.2
+              <span class="kss-title__permalink-hash">
+                  #mixins.dims
+              </span>
+            </span>
+            dims($dims)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Mixin allows for quick setting of the <code>width</code> and <code>height</code> properties on a given element.</p>
+<p>If the list argument contains 1x item: both properties will be set to the provided value.</p>
+<p>If the list argument contains 2x or more items: <code>width</code> will be set equal to the first value; <code>height</code> will be set equal to the second value</p>
+<p>In the case where 2x values are provided, <code>null</code> will be ignored.</p>
+<p>NOTE: Mixin is a port of the Bourbon library&#39;s &#39;size&#39;, which is currently throwing deprecation warnings.</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+.my-elem {
+    @include dims( 100px );
+}
+
+
+// Output
+.my-elem {
+    width: 100px;
+    height: 100px;
+}
+</code></pre><pre><code>// Input
+.row {
+    @include dims( 100% 200px );
+}
+
+// Output
+.row {
+    width: 100%;
+    height: 200px;
+}
+</code></pre><pre><code>// Input
+section {
+    @include dims( 100% null );
+}
+
+// Output
+section {
+    width: 100%;
+}
+</code></pre><pre><code>// Input
+.overlay {
+    @include dims( null 100% );
+}
+
+// Output
+.overlay {
+    height: 100%;
+}
+</code></pre><p>$dims - A list of values.</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/dims/_dims.scss</code>, line 1
+        </div>
+
+    </section>
+    <section id="kssref-mixins-max-size" class="kss-section kss-section--depth-2 ">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-max-size">
+            <span class="kss-title__ref">
+              2.3
+              <span class="kss-title__permalink-hash">
+                  #mixins.max-size
+              </span>
+            </span>
+            max-size($max-dims)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Mixin allows for quick setting of the <code>max-width</code> and <code>max-height</code> properties on a given element.</p>
+<p>If the list argument contains 1x item: both properties will be set to the provided value.</p>
+<p>If the list argument contains 2x or more items: <code>max-width</code> will be set equal to the first value; <code>max-height</code> will be set equal to the second value</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+div {
+    @include max-size( 50% );
+}
+
+// Output
+div {
+    max-width: 50%;
+    max-height: 50%;
+}
+</code></pre><pre><code>// Input
+div {
+    @include max-size( 100% 400px );
+}
+
+// Output
+div {
+    max-width: 100%;
+    max-height: 400px;
+}
+</code></pre>
+          </div>
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$max-dims</code></div>
+              <div class="kss-parameters__description">
+                A list of values.
+              </div>
+            </li>
+          </ul>
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/max-size/_max-size.scss</code>, line 1
+        </div>
+
+    </section>
+    <section id="kssref-mixins-min-size" class="kss-section kss-section--depth-2 ">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-min-size">
+            <span class="kss-title__ref">
+              2.4
+              <span class="kss-title__permalink-hash">
+                  #mixins.min-size
+              </span>
+            </span>
+            min-size($min-dims)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Mixin allows for quick setting of the <code>min-width</code> and <code>min-height</code> properties on a given element.</p>
+<p>If the list argument contains 1x item: both properties will be set to the provided value.</p>
+<p>If the list arguments contains 2x or more items: <code>max-width</code> will be set equal to the first value; <code>max-height</code> will be set equal to the second value</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+div {
+    @include min-size( 200px );
+}
+
+// Output
+div {
+    min-width: 200px;
+    min-height: 200px;
+}
+</code></pre><pre><code>// Input
+div {
+    @include min-size( 25% 600px );
+}
+
+// Output
+div {
+    min-width: 25%;
+    min-height: 600px;
+}
+</code></pre><p>$min-dims - A list of values.</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/min-size/_min-size.scss</code>, line 1
+        </div>
+
+    </section>
+    <section id="kssref-mixins-on" class="kss-section kss-section--depth-2 ">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-on">
+            <span class="kss-title__ref">
+              2.5
+              <span class="kss-title__permalink-hash">
+                  #mixins.on
+              </span>
+            </span>
+            on($states)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>For each valid &#39;state&#39; (eg. pseduo-selector) received via the <code>$states</code> argument,
+mixin wraps the provided <code>@content</code> declarations in a new CSS rule.
+Note that the mixin validates each &#39;state&#39; against an internally defined whitelist.</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+a {
+    @include on( hover ) { background: red; }
+}
+
+// Output
+a:hover {
+    background: red;
+}
+</code></pre><pre><code>// Input
+a {
+    @include on( focus active ) { margin-right: 10px; }
+}
+
+// Output
+a:focus,
+a:active {
+    margin-right: 10px;
+}
+</code></pre>
+          </div>
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$states</code></div>
+              <div class="kss-parameters__description">
+                The list of &#39;states&#39; for which to apply the provided styles.
+              </div>
+            </li>
+          </ul>
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/on/_on.scss</code>, line 1
+        </div>
+
+    </section>
+    <section id="kssref-mixins-parent" class="kss-section kss-section--depth-2 ">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-parent">
+            <span class="kss-title__ref">
+              2.6
+              <span class="kss-title__permalink-hash">
+                  #mixins.parent
+              </span>
+            </span>
+            parent ($type, $modifier)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Mixin allows for the building of rules based on the parent of the current selector.</p>
+<p>By default, including the <code>parent</code> mixin with no arguments will result in a new rule, with <code>* &gt;</code> prepended to the current selector.</p>
+<p>If the mixin is called with 1x argument, the &#39;*&#39; will be replaced with the value provided.</p>
+<p>If the mixin is called with 2x arguments, the second value will be appended to the first (eg. {TYPE}{MODIFIER}).</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+section {
+    @include parent {
+        background-color: grey;
+    }
+}
+
+// Output
+* &gt; section {
+    background-color: grey;
+}
+</code></pre><pre><code>// Input
+p {
+    @include parent( li ) {
+        text-decoration: underline;
+    }
+}
+
+// Output
+li &gt; p {
+    text-decoration: underline;
+}
+</code></pre><pre><code>// Input
+li {
+    @include parent( ul, &#39;.is-active&#39; ) {
+        font-weight: 700;
+    }
+}
+
+// Output
+ul.is-active li {
+    font-weight: 700;
+}
+</code></pre><p>$type = * -
+$modifier = &#39;&#39; -</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/parent/_parent.scss</code>, line 1
+        </div>
+
+    </section>
+    <section id="kssref-mixins-print-map" class="kss-section kss-section--depth-2 ">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-print-map">
+            <span class="kss-title__ref">
+              2.7
+              <span class="kss-title__permalink-hash">
+                  #mixins.print-map
+              </span>
+            </span>
+            print-map($map)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Given a map, mixin prints 1x declaration for every key/value pair. NOTE: Mixin DOES NOT support nested maps.</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+p {
+    @include print-map( $font-styles-map );
+}
+
+// Output
+p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+// NOTE:
+// Example above assumes that $font-styles-map includes the following keys: `font-size`; `font-weight`; `text-transform`.
+</code></pre><p>$map</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/print-map/_print-map.scss</code>, line 1
+        </div>
+
+    </section>
+    <section id="kssref-mixins-pseudo" class="kss-section kss-section--depth-2 ">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-pseudo">
+            <span class="kss-title__ref">
+              2.8
+              <span class="kss-title__permalink-hash">
+                  #mixins.pseudo
+              </span>
+            </span>
+            pseudo($elements)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>For each valid pseudo element received via the <code>$elements</code> argument, mixin wraps the provided <code>@content</code> declarations in a new CSS rule.</p>
+<p>Note that the mixin validates each &#39;element&#39; against an internally defined whitelist.</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+div {
+    @include pseudo( before ) {
+        content: &#39;This is my before element content&#39;;
+        display: block;
+        color: white;
+        background-color: black;
+    }
+}
+
+// Output
+div::before {
+    content: &#39;This is my before element content&#39;;
+    display: block;
+    color: white;
+    background-color: black;
+}
+</code></pre><p>$elements</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/pseudo/_pseudo.scss</code>, line 1
+        </div>
+
+    </section>
+    <section id="kssref-mixins-set" class="kss-section kss-section--depth-2 ">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-set">
+            <span class="kss-title__ref">
+              2.9
+              <span class="kss-title__permalink-hash">
+                  #mixins.set
+              </span>
+            </span>
+            set($props, $value)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Mixin creates 1x declaration for each item in a list of properties (<code>$props</code>). The value of each declaration is set to <code>$value</code>.</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+p {
+    @include set( margin padding, 0 );
+}
+
+// Output
+p {
+    margin: 0;
+    padding: 0;
+}
+</code></pre><pre><code>// Input
+img {
+    @include set( min-height max-height, 100% );
+}
+
+// Output
+img {
+    min-height: 100%;
+    max-height: 100%;
+}
+</code></pre><p>$props
+$value</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/set/_set.scss</code>, line 1
+        </div>
+
+    </section>
+</article>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script src="kss-assets/prettify.js"></script>
+<script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-guides.js"></script>
+<script src="kss-assets/kss-markup.js"></script>
+<script>
+  prettyPrint();
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+  var kssFullScreen = new KssFullScreen({
+    idPrefix: 'kss-fullscreen-',
+    bodyClass: 'kss-fullscreen-mode',
+    elementClass: 'is-fullscreen'
+  });
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  var kssMarkup = new KssMarkup({
+    bodyClass: 'kss-markup-mode',
+    detailsClass: 'kss-markup'
+  });
+</script>
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

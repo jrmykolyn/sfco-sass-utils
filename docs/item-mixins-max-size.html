@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="kss-assets/kss.css">
   
 </head>
-<body id="kss-node" >
+<body id="kss-node" class="kss-fullscreen-mode">
 
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
@@ -39,8 +39,66 @@
   </nav>
 </div>
 <article role="main" class="kss-main">
-    <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-      <h1 id="-todo">/// TODO</h1>
+
+    <div id="kssref-mixins-max-size" class="kss-section kss-section--depth-2 is-fullscreen">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-max-size">
+            <span class="kss-title__ref">
+              2.3
+              <span class="kss-title__permalink-hash">
+                  #mixins.max-size
+              </span>
+            </span>
+            max-size($max-dims)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Mixin allows for quick setting of the <code>max-width</code> and <code>max-height</code> properties on a given element.</p>
+<p>If the list argument contains 1x item: both properties will be set to the provided value.</p>
+<p>If the list argument contains 2x or more items: <code>max-width</code> will be set equal to the first value; <code>max-height</code> will be set equal to the second value</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+div {
+    @include max-size( 50% );
+}
+
+// Output
+div {
+    max-width: 50%;
+    max-height: 50%;
+}
+</code></pre><pre><code>// Input
+div {
+    @include max-size( 100% 400px );
+}
+
+// Output
+div {
+    max-width: 100%;
+    max-height: 400px;
+}
+</code></pre>
+          </div>
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$max-dims</code></div>
+              <div class="kss-parameters__description">
+                A list of values.
+              </div>
+            </li>
+          </ul>
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/max-size/_max-size.scss</code>, line 1
+        </div>
 
     </div>
 </article>

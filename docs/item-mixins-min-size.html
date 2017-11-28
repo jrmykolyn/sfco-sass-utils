@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="kss-assets/kss.css">
   
 </head>
-<body id="kss-node" >
+<body id="kss-node" class="kss-fullscreen-mode">
 
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
@@ -39,8 +39,58 @@
   </nav>
 </div>
 <article role="main" class="kss-main">
-    <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-      <h1 id="-todo">/// TODO</h1>
+
+    <div id="kssref-mixins-min-size" class="kss-section kss-section--depth-2 is-fullscreen">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-min-size">
+            <span class="kss-title__ref">
+              2.4
+              <span class="kss-title__permalink-hash">
+                  #mixins.min-size
+              </span>
+            </span>
+            min-size($min-dims)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Mixin allows for quick setting of the <code>min-width</code> and <code>min-height</code> properties on a given element.</p>
+<p>If the list argument contains 1x item: both properties will be set to the provided value.</p>
+<p>If the list arguments contains 2x or more items: <code>max-width</code> will be set equal to the first value; <code>max-height</code> will be set equal to the second value</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+div {
+    @include min-size( 200px );
+}
+
+// Output
+div {
+    min-width: 200px;
+    min-height: 200px;
+}
+</code></pre><pre><code>// Input
+div {
+    @include min-size( 25% 600px );
+}
+
+// Output
+div {
+    min-width: 25%;
+    min-height: 600px;
+}
+</code></pre><p>$min-dims - A list of values.</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/min-size/_min-size.scss</code>, line 1
+        </div>
 
     </div>
 </article>

@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="kss-assets/kss.css">
   
 </head>
-<body id="kss-node" >
+<body id="kss-node" class="kss-fullscreen-mode">
 
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
@@ -39,8 +39,54 @@
   </nav>
 </div>
 <article role="main" class="kss-main">
-    <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-      <h1 id="-todo">/// TODO</h1>
+
+    <div id="kssref-mixins-pseudo" class="kss-section kss-section--depth-2 is-fullscreen">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-pseudo">
+            <span class="kss-title__ref">
+              2.8
+              <span class="kss-title__permalink-hash">
+                  #mixins.pseudo
+              </span>
+            </span>
+            pseudo($elements)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>For each valid pseudo element received via the <code>$elements</code> argument, mixin wraps the provided <code>@content</code> declarations in a new CSS rule.</p>
+<p>Note that the mixin validates each &#39;element&#39; against an internally defined whitelist.</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+div {
+    @include pseudo( before ) {
+        content: &#39;This is my before element content&#39;;
+        display: block;
+        color: white;
+        background-color: black;
+    }
+}
+
+// Output
+div::before {
+    content: &#39;This is my before element content&#39;;
+    display: block;
+    color: white;
+    background-color: black;
+}
+</code></pre><p>$elements</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/pseudo/_pseudo.scss</code>, line 1
+        </div>
 
     </div>
 </article>

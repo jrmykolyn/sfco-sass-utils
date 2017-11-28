@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="kss-assets/kss.css">
   
 </head>
-<body id="kss-node" >
+<body id="kss-node" class="kss-fullscreen-mode">
 
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
@@ -39,8 +39,60 @@
   </nav>
 </div>
 <article role="main" class="kss-main">
-    <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-      <h1 id="-todo">/// TODO</h1>
+
+    <div id="kssref-mixins-descendant" class="kss-section kss-section--depth-2 is-fullscreen">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-descendant">
+            <span class="kss-title__ref">
+              2.1
+              <span class="kss-title__permalink-hash">
+                  #mixins.descendant
+              </span>
+            </span>
+            descendant($descendants)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>For each valid &#39;descendant keyword&#39; received via the <code>$descendants</code> argument,
+mixin wraps the provided <code>@content</code> declarations in a new CSS rule.
+Note that the mixin validates each &#39;descendant keyword&#39; against an internally defined whitelist.</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+section {
+    @include descendant( first last ) {
+        color: blue;
+        margin-bottom: 30px;
+    }
+}
+
+// Output
+section &gt; *:first-child,
+section &gt; *:last-child, {
+    color: blue;
+    margin-bottom: 30px;
+}
+</code></pre>
+          </div>
+
+          <div class="kss-parameters__title">Parameters:</div>
+          <ul class="kss-parameters">
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$descendants</code></div>
+              <div class="kss-parameters__description">
+                Space delimited list of descendant keywords.
+              </div>
+            </li>
+          </ul>
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/descendant/_descendant.scss</code>, line 1
+        </div>
 
     </div>
 </article>

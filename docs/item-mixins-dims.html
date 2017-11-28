@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="kss-assets/kss.css">
   
 </head>
-<body id="kss-node" >
+<body id="kss-node" class="kss-fullscreen-mode">
 
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
@@ -39,8 +39,79 @@
   </nav>
 </div>
 <article role="main" class="kss-main">
-    <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-      <h1 id="-todo">/// TODO</h1>
+
+    <div id="kssref-mixins-dims" class="kss-section kss-section--depth-2 is-fullscreen">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-mixins-dims">
+            <span class="kss-title__ref">
+              2.2
+              <span class="kss-title__permalink-hash">
+                  #mixins.dims
+              </span>
+            </span>
+            dims($dims)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Mixin allows for quick setting of the <code>width</code> and <code>height</code> properties on a given element.</p>
+<p>If the list argument contains 1x item: both properties will be set to the provided value.</p>
+<p>If the list argument contains 2x or more items: <code>width</code> will be set equal to the first value; <code>height</code> will be set equal to the second value</p>
+<p>In the case where 2x values are provided, <code>null</code> will be ignored.</p>
+<p>NOTE: Mixin is a port of the Bourbon library&#39;s &#39;size&#39;, which is currently throwing deprecation warnings.</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+.my-elem {
+    @include dims( 100px );
+}
+
+
+// Output
+.my-elem {
+    width: 100px;
+    height: 100px;
+}
+</code></pre><pre><code>// Input
+.row {
+    @include dims( 100% 200px );
+}
+
+// Output
+.row {
+    width: 100%;
+    height: 200px;
+}
+</code></pre><pre><code>// Input
+section {
+    @include dims( 100% null );
+}
+
+// Output
+section {
+    width: 100%;
+}
+</code></pre><pre><code>// Input
+.overlay {
+    @include dims( null 100% );
+}
+
+// Output
+.overlay {
+    height: 100%;
+}
+</code></pre><p>$dims - A list of values.</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>mixins/dims/_dims.scss</code>, line 1
+        </div>
 
     </div>
 </article>

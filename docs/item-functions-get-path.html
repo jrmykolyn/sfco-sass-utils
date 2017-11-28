@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="kss-assets/kss.css">
   
 </head>
-<body id="kss-node" >
+<body id="kss-node" class="kss-fullscreen-mode">
 
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
@@ -39,8 +39,52 @@
   </nav>
 </div>
 <article role="main" class="kss-main">
-    <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-      <h1 id="-todo">/// TODO</h1>
+
+    <div id="kssref-functions-get-path" class="kss-section kss-section--depth-2 is-fullscreen">
+
+      <div class="kss-style">
+        <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-functions-get-path">
+            <span class="kss-title__ref">
+              1.6
+              <span class="kss-title__permalink-hash">
+                  #functions.get-path
+              </span>
+            </span>
+            get-path(path-name, $submap)
+          </a>
+        </h2>
+
+
+          <div class="kss-description">
+            <p>Function fetches the specified path from a &#39;set&#39; of paths, defined on $path-map. This function may also be invoked as <code>getPath()</code>.</p>
+<p>NOTE: This function may also be used to fetch data from <code>$pathMap</code>.</p>
+<p><strong>Usage</strong></p>
+<pre><code>// Input
+.icon--share {
+    background-image: url(#{get-path( images )}/icon--share.png);
+}
+
+// Output
+.icon--share {
+    background-image: url(./assets/images/icon--share.png);
+}
+
+
+// NOTE:
+// Example above assumes that $path-map includes the $submap &#39;default&#39;,
+// which in turn has a key called `images` set to a value of `./assets/images`.
+</code></pre><p>$path-name
+$submap` = default</p>
+
+          </div>
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>functions/get-path/_get-path.scss</code>, line 1
+        </div>
 
     </div>
 </article>
