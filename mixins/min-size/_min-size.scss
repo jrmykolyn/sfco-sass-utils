@@ -1,42 +1,39 @@
-/*
-@styleguide
-
-@title min-size (@mixin)
-
-Mixin allows for quick setting of the `min-width` and `min-height` properties on a given element.
-
-If the list argument contains 1x item: both properties will be set to the provided value.
-
-If the list arguments contains 2x or more items: `max-width` will be set equal to the first value; `max-height` will be set equal to the second value
-
-- @param {String} `$min-dims` - A list of values
-
-### Usage
-```
-// Input
-div {
-    @include min-size( 200px );
-}
-
-// Output
-div {
-    min-width: 200px;
-    min-height: 200px;
-}
-```
-```
-// Input
-div {
-    @include min-size( 25% 600px );
-}
-
-// Output
-div {
-    min-width: 25%;
-    min-height: 600px;
-}
-```
-*/
+// min-size($min-dims)
+//
+// Mixin allows for quick setting of the `min-width` and `min-height` properties on a given element.
+//
+// If the list argument contains 1x item: both properties will be set to the provided value.
+//
+// If the list arguments contains 2x or more items: `max-width` will be set equal to the first value; `max-height` will be set equal to the second value
+//
+// **Usage**
+// ```
+// // Input
+// div {
+//     @include min-size( 200px );
+// }
+//
+// // Output
+// div {
+//     min-width: 200px;
+//     min-height: 200px;
+// }
+// ```
+// ```
+// // Input
+// div {
+//     @include min-size( 25% 600px );
+// }
+//
+// // Output
+// div {
+//     min-width: 25%;
+//     min-height: 600px;
+// }
+// ```
+// $min-dims - A list of values.
+//
+// Style guide: mixins.min-size
 @mixin min-size( $min-dims: null ) {
     @if ( $min-dims == null ) {
         @error 'Whoops! `min-size` requires at least 1x *non-null* argument.';

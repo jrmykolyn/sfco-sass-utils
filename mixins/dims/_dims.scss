@@ -1,69 +1,66 @@
-/*
-@styleguide
-
-@title dims (@mixin)
-
-Mixin allows for quick setting of the `width` and `height` properties on a given element.
-
-If the list argument contains 1x item: both properties will be set to the provided value.
-
-If the list argument contains 2x or more items: `width` will be set equal to the first value; `height` will be set equal to the second value
-
-In the case where 2x values are provided, `null` will be ignored.
-
-NOTE: Mixin is a port of the Bourbon library's 'size', which is currently throwing deprecation warnings.
-
-- @param {String} `$dims` - A list of values
-
-### Usage
-```
-// Input
-.my-elem {
-    @include dims( 100px );
-}
-
-
-// Output
-.my-elem {
-    width: 100px;
-    height: 100px;
-}
-```
-```
-// Input
-.row {
-    @include dims( 100% 200px );
-}
-
-// Output
-.row {
-    width: 100%;
-    height: 200px;
-}
-```
-```
-// Input
-section {
-    @include dims( 100% null );
-}
-
-// Output
-section {
-    width: 100%;
-}
-```
-```
-// Input
-.overlay {
-    @include dims( null 100% );
-}
-
-// Output
-.overlay {
-    height: 100%;
-}
-```
-*/
+// dims($dims)
+//
+// Mixin allows for quick setting of the `width` and `height` properties on a given element.
+//
+// If the list argument contains 1x item: both properties will be set to the provided value.
+//
+// If the list argument contains 2x or more items: `width` will be set equal to the first value; `height` will be set equal to the second value
+//
+// In the case where 2x values are provided, `null` will be ignored.
+//
+// NOTE: Mixin is a port of the Bourbon library's 'size', which is currently throwing deprecation warnings.
+//
+// **Usage**
+// ```
+// // Input
+// .my-elem {
+//     @include dims( 100px );
+// }
+//
+//
+// // Output
+// .my-elem {
+//     width: 100px;
+//     height: 100px;
+// }
+// ```
+// ```
+// // Input
+// .row {
+//     @include dims( 100% 200px );
+// }
+//
+// // Output
+// .row {
+//     width: 100%;
+//     height: 200px;
+// }
+// ```
+// ```
+// // Input
+// section {
+//     @include dims( 100% null );
+// }
+//
+// // Output
+// section {
+//     width: 100%;
+// }
+// ```
+// ```
+// // Input
+// .overlay {
+//     @include dims( null 100% );
+// }
+//
+// // Output
+// .overlay {
+//     height: 100%;
+// }
+// ```
+// $dims - A list of values.
+//
+// Style guide: mixins.dims
 @mixin dims( $dims ) {
     // Validate `$dims` arg.
     @if ( $dims != null && length( $dims ) >= 1 ) {

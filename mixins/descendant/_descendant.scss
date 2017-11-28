@@ -1,32 +1,30 @@
-/*
-@styleguide
-
-@title descendant (@mixin)
-
-For each valid 'descendant keyword' received via the `$descendants` argument,
-mixin wraps the provided `@content` declarations in a new CSS rule.
-Note that the mixin validates each 'descendant keyword' against an internally defined whitelist.
-
-- @param {String} `$descendants`
-
-### Usage
-```
-// Input
-section {
-    @include descendant( first last ) {
-        color: blue;
-        margin-bottom: 30px;
-    }
-}
-
-// Output
-section > *:first-child,
-section > *:last-child, {
-    color: blue;
-    margin-bottom: 30px;
-}
-```
-*/
+// descendant($descendants)
+//
+// For each valid 'descendant keyword' received via the `$descendants` argument,
+// mixin wraps the provided `@content` declarations in a new CSS rule.
+// Note that the mixin validates each 'descendant keyword' against an internally defined whitelist.
+//
+// **Usage**
+// ```
+// // Input
+// section {
+//     @include descendant( first last ) {
+//         color: blue;
+//         margin-bottom: 30px;
+//     }
+// }
+//
+// // Output
+// section > *:first-child,
+// section > *:last-child, {
+//     color: blue;
+//     margin-bottom: 30px;
+// }
+// ```
+//
+// $descendants - Space delimited list of descendant keywords.
+//
+// Style guide: mixins.descendant
 @mixin descendant( $descendants ) {
     $valid-descendants: first last;
 

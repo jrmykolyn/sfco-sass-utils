@@ -1,57 +1,58 @@
-/*
-@styleguide
-
-@title parent (@mixin)
-
-Mixin allows for the building of rules based on the parent of the current selector.
-By default, including the `parent` mixin with no arguments will result in a new rule, with `* >` prepended to the current selector.
-If the mixin is called with 1x argument, the '*' will be replaced with the value provided.
-If the mixin is called with 2x arguments, the second value will be appended to the first (eg. {TYPE}{MODIFIER}).
-
-- @param {String} `$type`
-- @param {String} `$modifier`
-
-### Usage
-```
-// Input
-section {
-    @include parent {
-        background-color: grey;
-    }
-}
-
-// Output
-* > section {
-    background-color: grey;
-}
-```
-```
-// Input
-p {
-    @include parent( li ) {
-        text-decoration: underline;
-    }
-}
-
-// Output
-li > p {
-    text-decoration: underline;
-}
-```
-```
-// Input
-li {
-    @include parent( ul, '.is-active' ) {
-        font-weight: 700;
-    }
-}
-
-// Output
-ul.is-active li {
-    font-weight: 700;
-}
-```
-*/
+// parent ($type, $modifier)
+//
+// Mixin allows for the building of rules based on the parent of the current selector.
+//
+// By default, including the `parent` mixin with no arguments will result in a new rule, with `* >` prepended to the current selector.
+//
+// If the mixin is called with 1x argument, the '*' will be replaced with the value provided.
+//
+// If the mixin is called with 2x arguments, the second value will be appended to the first (eg. {TYPE}{MODIFIER}).
+//
+// **Usage**
+// ```
+// // Input
+// section {
+//     @include parent {
+//         background-color: grey;
+//     }
+// }
+//
+// // Output
+// * > section {
+//     background-color: grey;
+// }
+// ```
+// ```
+// // Input
+// p {
+//     @include parent( li ) {
+//         text-decoration: underline;
+//     }
+// }
+//
+// // Output
+// li > p {
+//     text-decoration: underline;
+// }
+// ```
+// ```
+// // Input
+// li {
+//     @include parent( ul, '.is-active' ) {
+//         font-weight: 700;
+//     }
+// }
+//
+// // Output
+// ul.is-active li {
+//     font-weight: 700;
+// }
+// ```
+//
+// $type = * -
+// $modifier = '' -
+//
+// Style guide: mixins.parent
 @mixin parent( $type: '*', $modifier: '' ) {
     @if ( $type == null ) {
         $type: '';

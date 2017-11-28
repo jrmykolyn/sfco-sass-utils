@@ -1,39 +1,37 @@
-/*
-@styleguide
-
-@title on (@mixin)
-
-For each valid 'state' (eg. pseduo-selector) received via the `$states` argument,
-mixin wraps the provided `@content` declarations in a new CSS rule.
-Note that the mixin validates each 'state' against an internally defined whitelist.
-
-- @param {String} `$states` - The list of 'states' for which to apply the provided styles
-
-### Usage
-```
-// Input
-a {
-    @include on( hover ) { background: red; }
-}
-
-// Output
-a:hover {
-    background: red;
-}
-```
-```
-// Input
-a {
-    @include on( focus active ) { margin-right: 10px; }
-}
-
-// Output
-a:focus,
-a:active {
-    margin-right: 10px;
-}
-```
-*/
+// on($states)
+//
+// For each valid 'state' (eg. pseduo-selector) received via the `$states` argument,
+// mixin wraps the provided `@content` declarations in a new CSS rule.
+// Note that the mixin validates each 'state' against an internally defined whitelist.
+//
+// **Usage**
+// ```
+// // Input
+// a {
+//     @include on( hover ) { background: red; }
+// }
+//
+// // Output
+// a:hover {
+//     background: red;
+// }
+// ```
+// ```
+// // Input
+// a {
+//     @include on( focus active ) { margin-right: 10px; }
+// }
+//
+// // Output
+// a:focus,
+// a:active {
+//     margin-right: 10px;
+// }
+// ```
+//
+// $states - The list of 'states' for which to apply the provided styles.
+//
+// Style guide: mixins.on
 @mixin on( $states ) {
     $valid-states: hover focus active visited;
 
