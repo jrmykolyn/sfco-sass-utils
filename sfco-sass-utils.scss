@@ -1,6 +1,6 @@
 // NOTE:
-// - The contents of `lib/temp/` are private by default, and should be consumed on a case-by-case basis.
-// - This reduces the chance that a 'temp/' mixin/function will collided with (or shadow) a mixin/function exposed by a sibling dependency.
+// - The contents of `sfco-sass-utils/temp/` are private by default, and should be consumed on a case-by-case basis.
+// - This reduces the chance that a 'temp/' mixin/function will collide with (or shadow) a mixin/function exposed by a sibling dependency.
 
-@import 'lib/functions/manifest';
-@import 'lib/mixins/manifest';
+@import 'sfco-sass-utils/functions/manifest';
+@import 'sfco-sass-utils/mixins/manifest';
