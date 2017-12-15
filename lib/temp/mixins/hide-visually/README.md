@@ -1,0 +1,3 @@
+# hide-visually
+
+The `hide-visually` mixin is ported *directly* from the [Bourbon](https://github.com/thoughtbot/bourbon) library. The mixin was introduced in the [v5.0.0.beta.1](https://github.com/thoughtbot/bourbon/releases/tag/v5.0.0.beta.1) pre-release, and leter updated in [v5.0.0.beta.7](https://github.com/thoughtbot/bourbon/releases/tag/v5.0.0.beta.7). Unfortunately, neither of these releases are available for public consumption via npm, and importing a beta release will likely introduce breaking changes. Therefore, `sfco-sass-utils` will make the `hide-visually` mixin available until `Bourbon@5.0.0` receives a stable release.
