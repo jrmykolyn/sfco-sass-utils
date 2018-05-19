@@ -63,7 +63,7 @@
 // Style guide: mixins.dims
 @mixin dims( $dims ) {
     // Validate `$dims` arg.
-    @if ( $dims != null && length( $dims ) >= 1 ) {
+    @if ( $dims != null and length( $dims ) >= 1 ) {
         // Declare local vars.
         $width: nth( $dims, 1 );
         $height: null;
