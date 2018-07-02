@@ -1,7 +1,12 @@
-# Change Log
+# Changelog
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [Unreleased]
+### Fixed
+- Fixed incosistent references to 'tests' vs. 'test'.
+- Fixed incorrect use of `&&` in `dims()` mixin.
 
 ## [1.20.0] - 2017-11-29
 ### Added
