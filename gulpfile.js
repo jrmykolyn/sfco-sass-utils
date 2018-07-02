@@ -19,9 +19,9 @@ var PATHS = {
         src: './',
         dest: './docs/'
     },
-    tests: {
-        src: './tests/',
-        dest: './tests/'
+    test: {
+        src: './test/',
+        dest: './test/'
     }
 };
 
@@ -33,10 +33,10 @@ var PATHS = {
  *
  * The following tasks are executed *before* the contents of
  * the `default` task.
- * - `tests`
+ * - `test`
  * - `docs`
  */
-gulp.task( 'default', [ 'tests' ], function() {
+gulp.task( 'default', [ 'test' ], function() {
     console.log( 'INSIDE TASK: `default`' );
 } );
 
@@ -44,8 +44,8 @@ gulp.task( 'default', [ 'tests' ], function() {
 /**
  * ...
  */
-gulp.task( 'tests', function() {
-    return gulp.src( PATHS.tests.src + 'input.scss' )
+gulp.task( 'test', function() {
+    return gulp.src( PATHS.test.src + 'input.scss' )
         .pipe(
             sass( {
                 outputStyle: 'expanded'
@@ -57,5 +57,5 @@ gulp.task( 'tests', function() {
         .pipe( rename( function( path ) {
             path.basename = 'output';
         } ) )
-        .pipe( gulp.dest( PATHS.tests.dest) );
+        .pipe( gulp.dest( PATHS.test.dest) );
 } );
