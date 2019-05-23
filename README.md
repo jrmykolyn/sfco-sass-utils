@@ -11,7 +11,7 @@ SASS Utils. is a library of SASS `mixins` and `functions` which aim to simplify 
 ## Setup
 - Add the library to your project using `@import 'sfco-sass-utils'`.
 - Ensure that the library has been imported *before* any rules/SASS partials that use it's mixins or functions.
-- If your project stores style-related configuration information in dedicated partial files (eg. `_config.scss`, `_variables.scss`, etc.), `sfco-sass-utils` should be import *after* these files.
+- If your project stores style-related configuration information in dedicated partial files (eg. `_config.scss`, `_variables.scss`, etc.), `sfco-sass-utils` should be imported *after* these files.
 
 ## Documentation
 For current documentation, navigate to the `docs/` folder and open the `index.html` file. Documentation can be generated using `npm run docs`. Please note that all development dependencies (`devDependencies`) must be installed in order to generate documentation.
